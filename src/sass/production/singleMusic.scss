@@ -1,0 +1,60 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#singleFeatureMusic {
+    min-width: 100%;
+    min-height: 100%;
+    @include background-img;
+    background-color: black;
+    display: grid;
+    align-content: space-between;
+    border-radius: 25px;
+    .play-icon {
+      margin-right: 20px;
+      cursor:pointer;
+    }
+    .numbering{
+      font-size:2em;
+      color:$white;
+      font-family: $SFProDisplay_Bold;
+      line-height: 1;
+      margin-left: 15px;
+      font-weight: 900;
+    }
+    .description {
+      border-radius: 18px;
+      padding: 15px;
+      max-width: 100%;
+      backdrop-filter: blur(34px);
+      -webkit-backdrop-filter: blur(34px);
+      border-radius: 25px;
+      .single-feature-title {
+        font-size: 0.6em;
+        color: $white;
+        font-family: $SFProDisplay_Bold;
+        line-height: 1;
+        margin-bottom: 3px;
+        font-weight: 900;
+        text-rendering: optimizeLegibility;
+      }
+      .single-feature-artist {
+        @extend .single-feature-title;
+        font-size: 0.35em;
+        font-family: $SFProDisplay_Semi_Bold;
+        opacity: 0.53;
+      }
+      .description-wrapper {
+        align-self: center;
+      }
+      .rounded-circle {
+        min-height: 75px;
+        min-width: 75px;
+        max-height: 75px;
+        max-width: 75px;
+        border: solid 2px $red;
+        align-self: center;
+        @include background-img;
+        background-color: lighten($color: $red, $amount: 40);
+      }
+    }
+  }
+  

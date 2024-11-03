@@ -1,0 +1,158 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#social-media-page-home {
+    position: relative;
+    width: 100%;
+    padding: 2em;
+    margin-bottom: 3em;
+    @include mq($xxlg) {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+  
+    @include mq($xlg) {
+      padding: 30px;
+    }
+  
+    @include mq($lg) {
+      padding: 15px;
+    }
+    .header {
+      display: flex;
+  
+      @include mq($md) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  
+    //title box
+  
+    .main-title {
+      font-size: 4em;
+      font-family: $GTSectraDisplay_Bold;
+      font-weight: bold;
+      line-height: 1.1em;
+      text-align: left;
+      color: $white;
+  
+      @include mq($md) {
+        font-size: 3em;
+      }
+    }
+  
+    .description-text {
+      margin-bottom: 1.563em;
+      width: 100%;
+      height: auto;
+      font-family: $Heebo_Light;
+      font-size: 1.2em;
+      text-align: left;
+      color: $white !important;
+  
+      @include mq($md) {
+        width: fit-content;
+        height: auto;
+      }
+    }
+  
+    .right-content {
+      position: absolute;
+      top: 30px;
+      right: 0px;
+      .big-text-wrapper {
+        max-height: 15em;
+        overflow: hidden;
+        //   position: relative;
+        //   top: -3em;
+        .music-text {
+          text-align: right;
+          font-family: $Heebo_Medium;
+          font-size: 12em;
+          max-height: 200px;
+          line-height: 0.9;
+          color: black;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0);
+          /* Will override color (regardless of order) */
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: rgba(255, 255, 255, 0.16);
+          background: transparent;
+          // width: 714.76px;
+          height: 201.29px;
+  
+          @include mq($lg) {
+            font-size: 8em;
+            height: 150.29px;
+            max-height: 150.29px;
+          }
+        }
+      }
+      @include mq($md) {
+        display: none;
+      }
+    }
+  
+    .main-card-wrapper {
+      margin-top: 1em;
+  
+      @include mq($md) {
+        display: flex;
+      }
+      display: flex;
+      max-width: 100%;
+      flex-wrap: wrap;
+      column-gap: 1em;
+      row-gap: 1em;
+      .box {
+        border-radius: 9px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+        width: 135.75px;
+        height: 100%;
+        // min-width: ((175.75/1366) * 100%);
+        // max-width: ((175.75/1366) * 100%);
+        // min-height: ((239/768) * 100vh);
+        padding: 15px;
+        background: rgba($color: #292929, $alpha: .8);
+  
+        .img-wrapper {
+          min-width: 106px;
+          min-height: 106px;
+          border-radius: 50%;
+          background: $white;
+          display: grid;
+          place-items: center;
+  
+          img {
+            height: 60px;
+          }
+  
+          @include mq($md) {
+            min-width: 121px;
+            min-height: 121px;
+          }
+        }
+  
+        .views {
+          display: block;
+          font-family: $GTSectraDisplay_Bold;
+          font-weight: bold;
+          font-size: 36px;
+          text-align: left;
+          color: #fff;
+        }
+  
+        .views-txt {
+          font-family: $gilroy-medium;
+          font-weight: 500;
+          font-size: 12px;
+          text-align: left;
+          color: #fff;
+        }
+  
+        @include mq($md) {
+          width: 150.75px;
+        }
+      }
+    }
+  }

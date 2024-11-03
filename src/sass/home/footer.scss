@@ -1,0 +1,217 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+#footer-section-home {
+    width: 100%;
+    padding: 30px;
+    background: #313131;
+    display: flex;
+    flex-direction: column;
+    row-gap: 63px;
+    align-items: flex-end;
+    justify-content: space-between;
+    @include mq($xxlg) {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+  
+    @include mq($xlg) {
+      padding: 30px;
+    }
+  
+    @include mq($lg) {
+      padding: 15px;
+    }
+  
+    .logo-section {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+  
+      .logo {
+        width: 45px;
+        height: 45px;
+        background: url("../../../public/icons/logo.png");
+      }
+    }
+  
+    .links-section {
+      // border: 2px solid red;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      @include mq($xls){
+        flex-direction: column;
+      }
+      .first {
+        margin-left: 109px;
+        @include mq($md){
+          margin-left: 0px;
+        }
+        & > ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+          row-gap: 10px;
+  
+          & > li > a {
+            font-family: "GT Sectra Display";
+            font-weight: bold;
+            font-size: 2em;
+            text-align: left;
+            color: #fff;
+          }
+        }
+  
+       
+      }
+  
+      .second,
+      .third {
+        @include mq($xls){
+          padding-top: 20px;
+        }
+        .sub-heading {
+          font-family: $gilroy-bold;
+          font-weight: bold;
+          font-size: 20px;
+          letter-spacing: 0.11em;
+          text-align: left;
+          color: #fff;
+          margin: 0;
+          margin-bottom: 21px;
+        }
+  
+        & > ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+          row-gap: 9px;
+  
+          & > li > a {
+            font-family: $Heebo_Regular;
+            font-weight: 300;
+            font-size: 14px;
+            letter-spacing: 0.06em;
+            text-align: left;
+            color: #fff;
+            opacity: 0.5;
+          }
+        }
+  
+      }
+  
+      .third {
+        margin-right: 103px;
+        @include mq($md){
+          margin-right: 0px;
+        }
+      }
+  
+      //mobile
+    }
+  
+    .social-section {
+      width: 100%;
+      @include mq($md){
+        width: 100%;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // border: 2px solid yellow;
+      @include mq($xls){
+        display: block;
+      }
+      .notice{
+        padding-right:30px;
+        max-width: 40%;
+        @include mq($xls){
+          min-width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+      .copyright-txt {
+        font-family: Heebo;
+        font-weight: 300;
+        font-size: 14px;
+        letter-spacing: 0.06em;
+        text-align: left;
+        color: #fff;
+        opacity: 0.8;
+        justify-self: center;
+        align-self: center;
+        @include mq($xls){
+          margin-bottom: 20px ;
+        }
+  
+      }
+  
+      .social-icons {
+        margin-left: auto;
+        margin-right: 120px;
+        @include mq($xls){
+          margin-right: 0px;
+        }
+        & > ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          column-gap: 30.3px;
+  
+          .fb {
+            background: url("../../../public/icons/facebook.png");
+            width: 25.15px;
+            height: 25px;
+          }
+  
+          .twitter {
+            background: url("../../../public/icons/twitter.png");
+            width: 30.78px;
+            height: 25px;
+          }
+  
+          .spotify {
+            background: url("../../../public/icons/spotify.png");
+            width: 25px;
+            height: 25px;
+          }
+  
+          .youtube {
+            background: url("../../../public/icons/youtube.png");
+            width: 35.56px;
+            height: 25px;
+          }
+  
+        }
+  
+      }
+  
+    }
+    a {
+      @include transition;
+  
+      &:hover {
+        color: $red;
+      }
+    }
+    svg{
+  display: var(--fa-display,inline-block);
+height: 1em;
+overflow: visible;
+vertical-align: -.125em;
+    }
+  }

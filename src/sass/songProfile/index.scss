@@ -1,0 +1,539 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#song-profile{
+    .loader{
+        position: fixed;
+        top: 70px;
+        left:15%;
+        z-index: 1000;
+    }
+    .cont{
+        height: 40px;
+        background-color: #ccc;
+        border-radius: 6.75px;
+        position: relative;
+        
+        
+    }
+    .cont .progress-bar{
+        position: absolute;
+        border-radius: 6.75px;
+        height: 100%;
+        background-color: #7171ff;
+        width: 5%;
+        transition: width 2s;
+        &:hover{
+            .message{
+                color: #fff !important;
+            }
+        }
+    
+    }
+    .message{
+        position: absolute;
+        z-index: 100px;
+        width: 100%;
+        top:10px;
+        @include mq($xls){
+            font-size: small !important;
+            width: 90% !important;
+    
+        }
+        // text-align: center;
+    }
+    .progress-container{
+        position: absolute;
+        width: 80%;
+        @include mq($xls){
+            width: 100% !important;
+        }
+        &:hover{
+            .message{
+                color: #fff !important;
+            }
+            .successfull{
+                background-color: #218838!important;
+            }
+            .song-link{
+                color: #fff !important;
+            }
+        }
+    }
+    @keyframes progress-animation{
+        0%{width: 0%;}
+        100%{width: 100%;}
+    }
+    .close{
+        position: absolute;
+        z-index: 2000;
+        right: 20px;
+        top:7px;
+    }
+    .apply-edit-btn{
+        color: #ffff;
+        font-size: 16px;
+        cursor: pointer;
+        position: absolute;
+        padding-left: 21px;
+        padding-right: 21px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        top:200px;
+        right:100px;
+        border-radius: 9px;
+        font-weight: 700;
+        background-color: #f92e8d;
+        z-index: 1000;
+        @include mq($lgh){
+            top:250px !important
+
+        }
+        @include mq($xxsh){
+            top:550px !important;
+        }
+    }
+
+    .input-form-control{
+        background-color: transparent !important;
+        color:#fff;
+        width: 50%;
+        border: none;
+        position: relative;
+        font-size: 4rem;
+        padding: 0;
+        &:focus-visible{
+            border: none;
+            box-shadow: none;
+        }
+    
+    }
+    
+    @include mq($lgh){
+        .col-8{
+            flex:0 0 100% !important;
+            max-width: 100% !important;
+        }
+      }
+ .row{
+    @include mq($xls){
+        margin-left: 5px !important;
+    }
+ }
+ .col-7{
+    @include mq($xls){
+        flex: 0 0 68.333333%;
+        max-width: 68.333333%;
+        margin: auto;
+        margin-top: 100px;
+    }
+ }
+ .col-auto{
+    @include mq($xls){
+        margin: auto;
+    }
+ }
+    .cover-single{
+        min-height:27vh;
+        border-radius: 9px;
+        position: relative;
+        margin-bottom: 5px;
+        .upload-dropzone{
+            cursor: pointer;
+            position: absolute;
+            top:15px;
+            right:5px;
+            color:#fff;
+
+        }
+        .cover-wrapper-single{
+           width: 100%;
+           background-color: #333;
+           box-shadow: 0 8px 24px rgba(0,0,0,.5);
+           -webkit-box-shadow: 0 8px 24px rgba(0,0,0,.5);
+           padding: 0px;
+           border-radius: 9px;
+           margin: 0px;
+           border: 0px;
+           padding-bottom: 100%;
+           position: relative;
+    
+           img{
+               width: 100%;
+               height: 100%;
+               display: block;
+               position: absolute;
+               left:0;
+               top:0;
+               object-fit: cover;
+               border-radius: 9px;
+               object-position: center center;
+           }
+        }
+    }
+    .artist-title{
+        color: #b3b3b3;
+        font: 0.875rem;
+        font-weight: 400;
+    }
+    .col-5{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .col-6{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .artist-name{
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
+    }
+    .song-owner:hover{
+        background-color: #333;
+        cursor: pointer;
+    }
+    .artist{
+        min-height:auto;
+        border-radius: 9px;
+        position: relative;
+        margin-bottom: 5px;
+        .mt-4{
+            @include mq($xxs){
+            margin-top: 0.875rem !important;}
+        }
+        .artist-wrapper{
+           width: 100%;
+           border-radius: 50%;
+           background-color: #333;
+           box-shadow: 0 8px 24px rgba(0,0,0,.5);
+           -webkit-box-shadow: 0 8px 24px rgba(0,0,0,.5);
+           padding: 0px;
+           margin: 0px;
+           border: 0px;
+           padding-bottom: 100%;
+           position: relative;
+
+           img{
+               width: 100%;
+               display: block;
+               position: absolute;
+               left:0;
+               top:0;
+               border-radius: 50%;
+               object-fit: cover;
+               object-position: center center;
+           }
+        }
+   }
+    .artist-cover{
+        width: 100%;
+        height: 50vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 15%;
+        position: relative;
+        background-attachment: scroll;
+        top:0;
+        z-index: 0;
+        
+    }
+    .text-bold{
+        font-weight: bold;
+    }
+    .filter-blur{
+        filter: blur(3px) saturate(180%);
+    }
+    .artist-header{
+        width: 100%;
+        min-height:50vh;
+        position: relative;
+        z-index: 50;
+        background-color: transparent;
+        border-radius: 0px 0px 0px 0px;
+        background-blend-mode: multiply;
+        @include background-img;
+        display: grid;
+        align-items: flex-end;
+        padding-left: 20px;
+        padding-bottom: 30px;
+        padding-right: 36px;
+        margin-bottom: -50vh;
+        top:-50vh;
+
+        @include mq($xls) {
+            padding-bottom: 0px !important;
+            padding-left: 0px !important;
+            // margin-bottom: 0px !important;
+        }
+
+        .play-all-music {
+            display: none;
+
+            @include mq($xls) {
+                display: block;
+                width: 75vw;
+                height: 50px;
+                border-radius: 25px;
+                background: #f8107d;
+                font-family: $open-sans-semi-bold;
+                font-weight: 600;
+                font-size: 16px;
+                letter-spacing: 0.17em;
+                line-height: 1;
+                text-align: left;
+                display: grid;
+                place-items: center;
+                color: rgba($color: $music-page-white, $alpha: 1);
+                position: absolute;
+                left: 12.5vw;
+                transform: translateY(25px);
+            }
+        }
+
+        .d-flex {
+            svg {
+                align-self: center;
+
+                @include mq($xls) {
+                    display: inline;
+                }
+            }
+            .share-btn{
+                color: #fff;
+                @include mq($xls) {
+                    display: block;
+                }
+                svg{
+                    @include mq($xls) {
+                    display: block;
+                }
+                }
+            }
+        }
+
+        .panel-title {
+            font-family: $open-sans-semi-bold;
+            font-weight: 400;
+            font-size: 0.8125;
+            letter-spacing: 0.17em;
+            color: #fff;
+            line-height: 1;
+            text-align: left;
+            color: $music-page-white;
+            text-transform:capitalize;
+            margin-bottom: 15px;
+           svg{
+            display: inline;
+           }
+           div{
+            display: inline;
+           }
+            @include mq($xls) {
+                padding-left: 15px;
+            }
+        }
+        .btn-single{
+            border: 1px solid #fff;
+            cursor: pointer;
+            &:hover{
+                background-color: $red;
+                
+            }
+        }
+        .playlist-title-single {
+            font-family: $GTSectraDisplay_Bold;
+            font-weight: 900;
+            font-size: 4rem;
+            letter-spacing: 0.0em;
+            line-height: 1;
+            text-align: left;
+            color: $music-page-white;
+            
+            margin-bottom: 15px;
+            .pencil-name{
+                position: absolute;
+                top:5px;
+                right: 50px;
+            }
+            @include mq($xls) {
+                padding-left: 15px;
+                font-size: 50px!important;
+                line-height: 1.3 !important;
+            }
+            @include mq($lgh){
+                font-size: 3rem;
+            }
+        }
+
+        .playlist-desc {
+            width: ((785/1366)*100%);
+            font-family: $open-sans-semi-bold;
+            font-weight: 600;
+            width: 100%;
+            font-size: 14px;
+            line-height: 1.3;
+            text-align: left;
+            color: rgba($color: $music-page-white, $alpha: .39);
+
+            @include mq($xls) {
+                padding-left: 15px;
+                padding-bottom: 45px;
+                width: (100%);
+            }
+
+        }
+    }
+
+    .table-heading {
+        font-family: $open-sans-semi-bold;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18.2px;
+        text-align: left;
+        color: $white;
+        padding-left: 20px;
+        padding-right: 37px;
+        margin-bottom: 1px;
+
+        @include mq($xls) {
+            padding-right: 15px !important;
+            padding-left: 15px !important;
+        }
+
+        hr {
+            background: transparent;
+            border: 0.5px solid #efe9f8;
+            opacity: 0.24;
+
+        }
+
+        @include mq($xls) {
+            // display: none;
+        }
+
+    }
+
+    h3 {
+        margin-top: 16px;
+        font-family: $open-sans-semi-bold;
+        font-weight: 600;
+        font-size: (16px);
+        letter-spacing: 0.17em;
+        line-height: 1;
+        text-align: left;
+        color: $music-page-white;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    .the-music {
+        padding-left: 20px;
+        padding-right: 37px;
+        margin-bottom: 5px;
+
+        @include mq($xls) {
+            padding-right: 15px !important;
+            padding-left: 15px !important;
+        }
+
+    }
+
+    .single-music {
+        padding: 7px;
+
+        @include mq($xls) {
+            width: 100%;
+            min-height: 90px;
+            border-radius: 6px;
+            background: rgba($color:#292929, $alpha:0.48);
+            padding: 15px !important;
+            align-items: center;
+        }
+
+        @include transition;
+
+        &:hover {
+            border-radius: 6px;
+            background: rgba($color: #292929, $alpha: .48);
+        }
+
+        .numbering {
+            font-family: $open-sans-extra-bold;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 1;
+            text-align: left;
+            color: #efe9f8;
+            place-self: center;
+
+        }
+
+        .music {
+            .music-thumbnail {
+                width: 40px;
+                height: 40px;
+                border-radius: 9px;
+                @include background-img;
+                margin-right: 20px;
+            }
+
+            .music-info {
+                place-self: center;
+
+                .music-title {
+                    font-family: $open-sans-semi-bold;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 1;
+                    text-align: left;
+                    color: #efe9f8;
+                    margin-bottom: 5px;
+                    text-transform: capitalize;
+                }
+
+                .music-artist {
+                    font-family: $open-sans-regular;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 1;
+                    text-align: left;
+                    color: #efe9f8;
+                    opacity: 0.37;
+
+                }
+            }
+        }
+
+        .album {
+            @extend .numbering;
+            font-family: $open-sans-regular;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 1;
+            text-align: left;
+            color: #efe9f8;
+
+        }
+
+        .react {
+            @extend .numbering;
+
+            svg {
+                path {
+                    @include transition
+                }
+
+                &:hover {
+                    path {
+                        fill: $red;
+                        stroke: none;
+                    }
+                }
+            }
+        }
+
+        .play {
+            @extend .numbering;
+            @extend .react;
+        }
+    }
+}

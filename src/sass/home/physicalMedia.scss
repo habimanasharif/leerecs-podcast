@@ -1,0 +1,165 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#physical-media{
+    @include mq($xxlg) {
+      padding-left: 10vw;
+    }
+    @include mq($xlg) {
+      padding: 30px;
+    }
+  
+    @include mq($lg) {
+      padding: 15px;
+    }
+    .learn-more {
+      a {
+        color: $red;
+        font-weight: 900;
+        @include transition;
+        &:hover {
+          color: lighten($color: $red, $amount: 6);
+        }
+      }
+    }
+    .main-title {
+      font-size: 4em;
+      font-family: $GTSectraDisplay_Bold;
+      font-weight: bold;
+      line-height: 1.1em;
+      text-align: left;
+      color: $white;
+  
+      @include mq($md) {
+        font-size: 3em;
+      }
+    }
+    .col-md-6 {
+      // min-height:100vh;
+      padding-bottom: 4em;
+      &:first-child {
+        padding-right: 1.25em;
+        min-height: 75vh;
+      }
+      @include mq($xls) {
+        min-height: auto;
+        &:first-child {
+          padding-right: 0px;
+          min-height: 50vh;
+          margin-bottom: 20px;
+        }
+        &:last-child {
+          min-height: 50vh;
+          margin-bottom: 20px;
+        }
+      }
+      @include mq($xxs) {
+        &:first-child {
+          padding-right: 15px;
+        }
+      }
+    }
+    .services,
+    .catch-flase {
+      margin-top: 20px;
+      color: $white;
+      font-family: $gilroy-bold;
+      font-weight: 900;
+      max-width: 100%;
+      @include mq($md) {
+        font-size: 1.3em;
+      }
+    }
+    .text {
+      color: $white;
+      font-family: $Heebo_Light;
+      margin-bottom: 30px;
+    }
+    .btn-list {
+      justify-content: flex-start;
+      column-gap: 15px;
+      @include mq($md) {
+        column-gap: 15px;
+      }
+      @include mq($md) {
+        column-gap: 10px;
+      }
+      @include mq($xls) {
+        padding-right: 15px;
+      }
+      .btn-white {
+        background-color: $white;
+        // min-height: 3.125em;
+        display: flex;
+        place-items: center;
+        border-radius: 10px;
+        &:hover {
+          background-color: $red;
+          color: #fff !important;
+        }
+        @include mq($xxlg) {
+          min-height: 3.75em;
+        }
+        @include mq($xlg) {
+          min-height: 3.75em;
+        }
+        @include mq($lg) {
+          min-height: 3.125em;
+        }
+        @include mq($xls) {
+          min-height: 3.125em;
+        }
+      }
+    }
+    img {
+      margin-right: 1.4375em;
+      align-self: center;
+      @include mq($xxlg) {
+        height: 25px;
+        width: auto;
+      }
+      @include mq($lg) {
+        height: 21px;
+        width: auto;
+      }
+    }
+    .h5 {
+      color: #000;
+      font-size: 1.1em;
+      align-self: center;
+      line-height: 1;
+      margin-bottom: 0px;
+      font-family: $gilroy-bold;
+      @include mq($xxlg) {
+        font-size: 1.2em;
+      }
+      @include mq($xlg) {
+        font-size: 1.1em;
+      }
+      @include mq($md) {
+        font-size: 0.8em;
+      }
+    }
+    .title-text {
+      font-size: 12em;
+      -webkit-text-stroke: 1px rgba(#e4e4e4, 0.2);
+      color: rgba($color: #000000, $alpha: 0);
+      position: absolute;
+      right: 0px;
+      line-height: 1;
+      font-family: $Heebo_Medium;
+      @include mq($xxlg) {
+        font-size: 16em;
+      }
+      @include mq($xlg) {
+        font-size: 12em;
+      }
+      @include mq($md) {
+        display: none;
+      }
+    }
+    .production-image {
+      @include background-img;
+    }
+  
+  }
+  

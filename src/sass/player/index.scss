@@ -1,0 +1,279 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+#MusicOfficialPlayer {
+ 
+    .react-jinke-music-player-main{
+      z-index:2000;
+      position:relative;
+    }
+    .panel-content {
+      background-color: red;
+    }
+  
+    .progress-bar {
+      background-color: red !important;
+    }
+  
+    #mobile-player {
+      min-width: 100vw;
+      min-height: 100vh;
+      overflow-y: hidden;
+      background-color: #171717;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20000000;
+      padding: 15px 15px 15px 15px;
+  
+      .header {
+        align-content: center;
+        margin-bottom: 20px;
+  
+        .rounded-circle {
+          display: grid;
+          place-items: center;
+          min-height: (60px / $divider);
+          height: (60px / $divider);
+          width: (60px / $divider);
+          height: (60px / $divider);
+          background: #292929;
+          filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+  
+          svg {
+            height: (25px / $divider);
+          }
+        }
+  
+        .title {
+          font-family: $open-sans-regular;
+          font-weight: normal;
+          font-size: (19.42px / $divider);
+          text-align: left;
+          color: #fff;
+          line-height: 1;
+          align-self: center;
+        }
+      }
+  
+      .player {
+        min-height: calc(100vh - 320px);
+        margin-bottom: 45px;
+  
+        .decoration-color {
+          width: 100%;
+          max-width: calc(100% - 60px);
+          height: calc(100vh - 320px);
+          border-radius: 18px;
+          background: #10f88b;
+          opacity: 0.29;
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+          position: absolute;
+          left: 30px;
+          z-index: 201;
+          transform: rotate(2deg);
+        }
+  
+        .decoration-color-1 {
+          @extend .decoration-color;
+          opacity: 1;
+          z-index: 202;
+          transform: rotate(-3deg);
+        }
+  
+        .player-data {
+          @extend .decoration-color;
+          opacity: 1;
+          background: #292929;
+          z-index: 203;
+          transform: rotate(0deg);
+          padding: 15px;
+  
+          .music-img {
+            background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/8f7a3780277319.5ce544b63e421.jpg");
+            @include background-img;
+            min-width: 100%;
+            min-height: 85%;
+            border-radius: 18px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            margin-bottom: 20px;
+          }
+  
+          .music-description {
+            .title {
+              font-family: $open-sans-light;
+              font-weight: 300;
+              font-size: 24px;
+              line-height: 1;
+              text-align: left;
+              color: #fff;
+              margin-bottom: 7.5px;
+            }
+  
+            .artists {
+              @extend .title;
+              font-size: 12px;
+              color: #736b6b;
+            }
+          }
+  
+          // background: #10f88b;
+        }
+      }
+  
+      .counter {
+        .text {
+          font-family: $open-sans-semi-bold;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 17px;
+          line-height: 1;
+          text-align: left;
+          color: #fff;
+        }
+  
+        .counter {
+          min-height: 9px;
+          min-width: calc(100vw - 110px);
+          border-radius: 100px;
+          background-color: #611438;
+          margin-bottom: 15px;
+          align-self: center;
+  
+          .counter-child {
+            background-color: $red;
+            height: 9px;
+            width: 0px;
+            border-radius: 100px;
+            @include transition;
+          }
+        }
+      }
+  
+      .bottom-actions {
+        width: 100%;
+        height: 90px;
+        border-radius: 18px;
+        background: #252525;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+        padding: 20px;
+  
+        svg,
+        .icons {
+          align-self: center;
+          @include transition;
+          svg {
+            path {
+              @include transition;
+            }
+            &:hover {
+              path {
+                stroke: $red;
+              }
+            }
+          }
+        }
+        .single-icon {
+          align-self: center;
+        }
+        .shuffle {
+          align-self: center;
+          svg {
+            path {
+              stroke: $red;
+            }
+          }
+        }
+      }
+    }
+    #min-player-mobile {
+      min-width: 100vw;
+      padding-right: 15px;
+      padding-left: 15px;
+      position: fixed;
+      z-index: 100;
+      bottom: 80px;
+      .player-p-wrapper {
+        min-width: 100%;
+        min-height: 60px;
+        border-radius: 30px;
+        background: #000;
+        align-items: center;
+        align-content: center;
+        padding-left: 3px;
+        padding-bottom: 3px;
+        padding-top: 3px;
+        padding-right: 20px;
+        .progress {
+          min-width: 20%;
+          background-color: $red;
+          min-height: 10px;
+          position: absolute;
+          border-radius: 30px;
+        }
+        .rounded-circle {
+          width: 53px;
+          height: 53px;
+          border: 1.5px solid #f8107d;
+          background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/02f2f6125837113.612142cc8727c.jpg");
+          @include background-img;
+          margin-right: 15px;
+        }
+  
+        .all-music-details {
+          align-self: center;
+          .music-title {
+            font-family: $open-sans-semi-bold;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1;
+            text-align: left;
+            color: #fff;
+            margin-bottom: 7.5px;
+          }
+  
+          .music-artist {
+            font-family: $open-sans-semi-bold;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 1;
+            text-align: left;
+            color: #fff;
+            opacity: 0.2;
+          }
+        }
+  
+        .like {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  .react-jinke-music-player-main {
+    .progress-bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: visible;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      background-color: rgba(0, 0, 0, 0);
+      transition: width 0.6s ease;
+    }
+  
+    .rc-slider-track {
+      background-color: $red;
+    }
+    .react-jinke-music-player-main .loading svg {
+      color: $red !important;
+    }
+    .react-jinke-music-player-mobile-progress .rc-slider-handle,
+    .react-jinke-music-player-mobile-progress .rc-slider-track {
+      background-color: $red !important;
+    }
+    .react-jinke-music-player .music-player-controller {
+      background-color: $red;
+    }
+  }

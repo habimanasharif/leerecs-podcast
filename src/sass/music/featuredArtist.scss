@@ -1,0 +1,212 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#featured-artists {
+    margin-top: 20px;
+
+    .slider{
+        position: relative;
+        overflow: hidden;
+        .next-5{
+            color: #fff ;
+            position:absolute;
+            right:0px;
+            top:30%;
+            z-index:2;
+            @include mq($xls){
+                display: none;
+             }
+             @include mq($md){
+                 display: none;
+             }
+             @include mq($lg){
+                 display: none;
+             }
+        }
+        .slider-icon{
+            padding: 0px 5px 4px 5px;
+            background-color: #fff;
+            border: 1px solid black;
+            &:hover{
+                border: 2px solid #F8107D;  
+            }
+        }
+        .previous-5{
+            color: #fff ;
+            position:absolute;
+            left:0px;
+            top:30%;
+            z-index:2;
+            @include mq($xls){
+                display: none;
+             }
+             @include mq($md){
+                 display: none;
+             }
+             @include mq($lg){
+                 display: none;
+             }
+        }
+    }
+    .marg-t{
+        margin-top:77px;
+        @include mq($xls) {
+            margin-top: 97px !important;
+        }
+    }
+    h3 {
+        font-family: $open-sans-semi-bold;
+        font-weight: 600;
+        font-size: (16px);
+        letter-spacing: 0.17em;
+        line-height: 1;
+        text-align: left;
+        color: $music-page-white;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    .row{
+        margin-left: -4.5px;
+        margin-right: -4.5px;
+        flex-wrap:nowrap !important;
+        backface-visibility:hidden;
+         transform: translateZ(0);
+         -webkit-backface-visibility:hidden;
+        transition: transform .6s ease-in-out 0s;
+        // @include over-scroll-row;
+        @include mq($xls){
+            width: auto;
+            flex-wrap: nowrap;
+            max-width: 100vw;
+            overflow: scroll;
+            @include scroll-bar-hidden;
+        }
+        @include mq($md){
+            width: auto;
+            flex-wrap: nowrap;
+            max-width: 100vw;
+            overflow: scroll;
+            @include scroll-bar-hidden;
+        }
+        @include mq($lg){
+            width: auto;
+            flex-wrap: nowrap;
+            max-width: 100vw;
+            overflow: scroll;
+            @include scroll-bar-hidden;
+        }
+    }
+
+    .col-md-3 {
+        max-width: calc((100% /5) - 15px);
+        min-width: calc((100% /5) - 15px);
+        @include mq($lg) {
+            max-width: calc((100% /4) - 15px);
+            min-width: calc((100% /4) - 15px);
+        }
+        @include mq($lgh) {
+            max-width: calc((100% /3) - 15px);
+            min-width: calc((100% /3) - 15px);
+        }
+
+        @include mq($md) {
+            max-width: calc((100% /3) - 15px);
+            min-width: calc((100% /3) - 15px);
+        }
+
+        @include mq($xls) {
+            max-width: calc((100% /1.5) - 15px);
+            min-width: calc((100% /1.5) - 15px);
+        }
+        @include col-md-xls;
+
+        &:last-child {
+            padding-right: 0px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .artist{
+            min-width: 90%;
+             min-height:27vh;
+             border-radius: 9px;
+             position: relative;
+             margin-bottom: 5px;
+             .artist-wrapper{
+                width: 100%;
+                border-radius: 50%;
+                background-color: #333;
+                box-shadow: 0 8px 24px rgba(0,0,0,.5);
+                -webkit-box-shadow: 0 8px 24px rgba(0,0,0,.5);
+                padding: 0px;
+                margin: 0px;
+                border: 0px;
+                padding-bottom: 100%;
+                position: relative;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+             }
+        }
+        .artist-name{
+            font-family: $open-sans-semi-bold;
+            min-height: 62px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.17em;
+            line-height: 1;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-block-end: 4px;
+            white-space: nowrap;
+            color: #fff;
+            .artist-type{
+                color:var(--text-subdued,#b8b8b8);
+                font-weight: 400;
+                font-size: 0.875rem;
+            }
+        }
+
+    }
+
+    @keyframes shine {
+        to {
+            background-position-x: -300%;
+        }
+    }
+
+    .preloader {
+        max-width: calc((100% /5) - 15px);
+        min-width: calc((100% /5) - 15px);
+        min-height: 30vh;
+        background-color: rgba($color: #F8107D, $alpha: 0.48);
+        background: linear-gradient(110deg, rgba($color: #F8107D, $alpha: 0.48) 8%, rgba($color: #F8107D, $alpha: 0.88) 18%, rgba($color: #F8107D, $alpha: 0.48) 33%);
+        border-radius: 9px;
+        background-size: 300% 300%;
+        animation: 3s shine linear infinite;
+        margin-bottom: 15px;
+        @include mq($lg) {
+            max-width: calc((100% /4) - 15px);
+            min-width: calc((100% /4) - 15px);
+        }
+
+        @include mq($md) {
+            max-width: calc((100% /3) - 15px);
+            min-width: calc((100% /3) - 15px);
+        }
+
+        @include mq($xls) {
+            max-width: calc((100% /1.5) - 15px);
+            min-width: calc((100% /1.5) - 15px);
+        }
+    }
+}

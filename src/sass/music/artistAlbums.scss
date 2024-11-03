@@ -1,0 +1,147 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#new-album {
+    margin-top:20px;
+
+    .marg-t {
+        margin-top: 77px;
+        @include mq($xls) {
+            margin-top: 97px !important;
+        }
+    }
+    h3{
+        font-family: $open-sans-semi-bold;
+        font-weight: 600;
+        font-size: (16px);
+        letter-spacing: 0.17em;
+        line-height: 1;
+        text-align: left;
+        color: $music-page-white;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    .row {
+        margin-left: -4.5px;
+        margin-right: -4.5px;
+        flex-wrap: nowrap;
+        @include mq($xls){
+            width: auto;
+            flex-wrap: nowrap;
+            max-width: 100vw;
+            overflow: scroll;
+            @include scroll-bar-hidden;
+        }
+        @include mq($md){
+            width: auto;
+            flex-wrap: nowrap;
+            max-width: 100vw;
+            overflow: scroll;
+            @include scroll-bar-hidden;
+        }
+        @include mq($lg){
+            width: auto;
+            flex-wrap: nowrap;
+            max-width: 100vw;
+            overflow: scroll;
+            @include scroll-bar-hidden;
+        }
+        @include over-scroll-row;
+    }
+    .col-md-3 {
+        max-width:calc((100% /5) - 15px);
+        padding-top: 10px;
+        margin-bottom: 20px;
+        @include mq($lg) {
+            max-width: calc((100% /4) - 15px);
+            min-width: calc((100% /4) - 15px);
+        }
+        @include mq($lgh) {
+            max-width: calc((100% /3) - 15px);
+            min-width: calc((100% /3) - 15px);
+        }
+        @include mq($md) {
+            max-width: calc((100% /3) - 15px);
+            min-width: calc((100% /3) - 15px);
+        }
+
+        @include mq($xls) {
+            max-width: calc((100% /1.5) - 15px);
+            min-width: calc((100% /1.5) - 15px);
+        }
+        @include col-md-xls;
+        a {
+            text-decoration: none;
+        }
+        &:last-child{
+            padding-right: 0px;
+        }
+        .actual{
+            min-height:27vh;
+            min-width: 98%;
+            border-radius: 9px;
+            // background-image: linear-gradient(rgba(94, 94, 94, 0) 0%, #0f0f0f 100%),
+            // url("https://d2vf2lffk4redv.cloudfront.net/004e13120476085.60b25981f3b8e.png");
+            @include background-img;
+            background-blend-mode: multiply;
+            display: grid;
+            align-content: space-between;
+            padding: 15px;
+
+            .numbering {
+                font-family: $open-sans-regular;
+                font-weight: 600;
+                font-size: 60px;
+                // letter-spacing: 0.17em;
+                color: #b8b8b8;
+                line-height: 1;
+                text-align: left;
+                color: $white;
+                padding-bottom: 15px;
+            }
+
+            .song-name {
+                font-family:$open-sans-regular;
+                font-weight: normal;
+                font-size: 16px;
+                text-align: left;
+                color: #fff;
+                opacity: 0.58;
+            }
+        }
+    }
+
+    @keyframes shine {
+        to {
+            background-position-x: -300%;
+        }
+    }
+
+    .preloader {
+        max-width: calc((100% /5) - 15px);
+        min-width: calc((100% /5) - 15px);
+        min-height: 30vh;
+        background-color: rgba($color: #F8107D, $alpha: 0.48);
+        background: linear-gradient(110deg, rgba($color: #F8107D, $alpha: 0.48) 8%, rgba($color: #F8107D, $alpha: 0.88) 18%, rgba($color: #F8107D, $alpha: 0.48) 33%);
+        border-radius: 9px;
+        background-size: 300% 300%;
+        animation: 3s shine linear infinite;
+        @include mq($lg) {
+            max-width: calc((100% /4) - 15px);
+            min-width: calc((100% /4) - 15px);
+        }
+        @include mq($lgh) {
+            max-width: calc((100% /3) - 15px);
+            min-width: calc((100% /3) - 15px);
+        }
+        @include mq($md) {
+            max-width: calc((100% /3) - 15px);
+            min-width: calc((100% /3) - 15px);
+        }
+
+        @include mq($xls) {
+            max-width: calc((100% /1.5) - 15px);
+            min-width: calc((100% /1.5) - 15px);
+        }
+        @include col-md-xls;
+    }
+}

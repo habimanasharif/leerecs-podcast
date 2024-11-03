@@ -1,0 +1,103 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#file-uploader{
+
+    .recent-images-container{
+        width: auto;
+        max-width: 270px;
+        overflow: scroll;
+        flex-wrap: nowrap;
+        z-index: 20;
+       .recent-images{
+        height: 70px;
+        min-width: 70px !important;
+        margin-right: 10px;
+        background-color: red;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+       }
+    }
+
+    h4{
+        font-size: 1.1rem;
+        font-weight: bolder;
+        color:#fff
+    }
+    min-height: calc(100% - 35px);
+    border-radius: 9px;
+    background-color: rgba(56, 56, 56, 0.39);
+    border: 2px dashed $music-page-white;
+       /* dashed border */
+     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='9' ry='9' stroke='%23BFBFBFFF' stroke-width='2' stroke-dasharray='11' stroke-dashoffset='100' stroke-linecap='butt'/%3e%3c/svg%3e");
+    background-blend-mode: multiply;
+    @include background-img;
+    color:$white;
+    padding-top: 12px;
+    padding-left: 15px;
+    .dropzone{
+        .all-upload-data {
+            min-height: calc(240px + 30vh - 35px);
+            width: 100%;
+            max-width: 100%;
+            display: grid;
+            align-content: space-between;
+            .title {
+                font-family: $open-sans-semi-bold;
+                font-weight: 600;
+                font-size: 16px;
+                letter-spacing: 0.17em;
+                line-height: 1;
+                text-align: left;
+                color: $music-page-white;
+            }
+            .music-play{
+                margin-bottom: 39.1px;
+                width: 100%;
+                display: grid;
+                place-items: center;
+            }
+            .file-icon-svg{
+                width: 100%;
+                display: grid;
+                place-items: center;
+                svg {
+                    margin-bottom: 26.8px;
+                    place-self: center;
+                }
+            }
+            .text {
+                margin-bottom: 10px;
+                font-family: $open-sans-regular;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 1.3;
+                text-align: left;
+                color: $music-page-white;
+
+                span{
+                    color:$red;
+                    cursor: pointer;
+                }
+            }
+            .requirement{
+                font-family:$open-sans-regular;
+                font-weight: normal;
+                font-size: 15px;
+                line-height: 1;
+                text-align: left;
+                color: $music-page-white;
+                display: grid;
+                .rounded-circle{
+                    width: 10px;
+                    height: 10px;
+                    background: #fff;
+                    opacity: 0.36;
+                    margin-right: 15px;
+                    margin-bottom: 16px;
+                }
+
+            }
+        }
+    }
+}

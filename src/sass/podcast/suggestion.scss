@@ -1,0 +1,70 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#suggestions {
+    padding-top: 60px;
+    padding-left: 20px;
+    @include mq($md) {
+      padding-top: 20px;
+      padding-left: 0px;
+    }
+    .suggestions-title {
+      font-family: $GTSectraDisplay_Bold;
+      font-size: 1.875em;
+      color: $white;
+      margin-bottom: 20px;
+    }
+    .suggestion-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .card-obj {
+      min-width: 30%;
+      min-height: 33vh;
+      @include mq($xls) {
+        min-width: calc(50% - 15px);
+        min-height: 15vh;
+      }
+      @include mq($md) {
+        min-height: 20vh;
+      }
+      @include mq($xxs) {
+        min-width: 100%;
+        min-height: 45vh;
+      }
+    }
+  }
+  #podcaststyle {
+    padding-top: 15px;
+    padding-left: 0px;
+    .suggestions-title {
+      font-family: $GTSectraDisplay_Bold;
+      font-size: 1.875em;
+      color: $white;
+      margin-bottom: 20px;
+    }
+    .suggestion-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 27px;
+    }
+    .card-obj {
+      min-width: calc(16% - 15px);
+      max-width: calc(16% - 15px);
+      min-height: 33vh;
+      @include mq($lg) {
+        min-width: calc((100%/4) - 15px);
+        max-width: calc((100%/4) - 15px);
+        min-height: 33vh;
+      }
+      @include mq($xls) {
+        min-width: calc(50% - 15px);
+      }
+      @include mq($xxs) {
+        min-width: 90%;
+        max-width: 90%;
+        min-height: 45vh;
+      }
+    }
+  }
+  

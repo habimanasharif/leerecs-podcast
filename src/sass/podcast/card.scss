@@ -1,0 +1,73 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+.card-obj {
+    min-width: (23.38365%);
+    max-width: (23.38365%);
+    min-height: ((474/768) * 100vh);
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    display: grid;
+    align-content: space-between;
+  
+    .justify-content-end {
+      padding-right: 15px;
+      padding-top: 15px;
+      cursor: pointer;
+    }
+  
+    .bottom-text-events {
+      border-radius: 0px 21px 12px 12px;
+      background: transparent;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      background-color: hsla(0,0%,100%,.15);
+      padding: 10px;
+     
+      .music-title-events {
+        font-family: $GTSectraDisplay_Bold;
+        font-weight: bold;
+        font-size: 0.938em;
+        line-height: 1.1em;
+        text-align: left;
+        color: #e2e2e2;
+        margin-bottom: 3px;
+      }
+  
+      .music-artist-events {
+        font-family: $gilroy-medium;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1;
+        text-align: left;
+        color: #e2e2e2;
+      }
+    }
+  
+    
+  
+    @-moz-document url-prefix() {
+      .bottom-text-events {
+        background: #B90358E6;;
+      }
+      }
+    @include mq($md) {
+      max-width: calc(50% - 0.5em);
+      min-width: unset;
+      min-width: calc(50% - 0.5em);
+      margin-right: unset;
+    }
+  
+    @include mq($xls) {
+      max-width: 100%;
+      min-width: unset;
+      min-width: calc(100% - 0.5em);
+      margin-right: unset;
+    }
+  }
+
+  .card1 {
+    // background-image: url("./assets/first.png");
+    @include background-img;
+  }
+  

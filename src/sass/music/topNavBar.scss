@@ -1,0 +1,228 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+@keyframes slide-up {
+    from {
+      bottom: -75vh;
+      opacity: 0;
+    }
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+  
+  #searchBarNavigator {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    background-color: #0f0f0f;
+    min-height: 70px;
+    padding: 15px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    display: grid;
+    align-items: center;
+    border-radius: 0px 0px 20px 20px;
+    .input-group {
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: rgba($color: #383838, $alpha: 0.39);
+      width: calc(100vw - 120px);
+      height: (60px / $divider);
+      border: none;
+      padding-left: 15px;
+  
+      input {
+        min-width: calc(100% - 30px);
+        background: rgba($color: #383838, $alpha: 0);
+        border: none;
+        padding-left: 15px;
+        font-family: $open-sans-regular;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.17em;
+        line-height: 1;
+        text-align: left;
+        color: #dbdbdb;
+  
+        &:focus {
+          outline: none;
+        }
+  
+        &:input-placeholder {
+          font-family: $open-sans-regular;
+          font-weight: 600;
+          font-size: 14px;
+          letter-spacing: 0.17em;
+          line-height: 1;
+          text-align: left;
+          color: #dbdbdb;
+        }
+      }
+    }
+  }
+  .nav-height{
+  height: 100vh;
+  }
+  #top-mobile-nav-bar {
+    .active-note{
+      position: absolute;
+      top:1.7rem;
+      right:.9rem;
+      width: .7rem;
+      height: .7rem;
+      border-radius: 50%;
+      background-color: #f8107d;
+    }
+    .logo {
+      height: (30px);
+      background: transparent;
+      border-radius: 50%;
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    min-width: 100%;
+    max-width: 100vw;
+    padding: 15px;
+    padding-bottom: 0px;
+    display: none;
+    // min-height: 100vh;
+    overflow: scroll;
+    @include scroll-bar-hidden;
+    @include mq($md) {
+      display: block;
+    }
+    .the-nav-bar-wrapper {
+      min-height: 53px;
+      display: grid;
+      place-items: center;
+    }
+    .cancel {
+      min-height: 12vh;
+      min-width: 100vw;
+      background: #0f0f0f;
+      opacity: 0.5;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 99;
+    }
+    .actions {
+      min-height: 75vh;
+      min-width: 100vw;
+      border-radius: 30px 30px 0px 0px;
+      background: #000;
+      position: absolute;
+      left: 0px;
+      z-index: 100;
+      padding: 15px;
+      padding-top: 33px;
+      animation: slide-up ease-out 0.3s;
+      .rounded-circle {
+        width: 90px;
+        height: 90px;
+        /* background: url(...); */
+        border: 3px solid #f8107d;
+        @include background-img;
+        margin-right: 41px;
+      }
+      .user-name {
+        align-self: center;
+        font-family: $poppins-extra-bold;
+        font-weight: normal;
+        font-size: 35px;
+        line-height: 1;
+        text-align: left;
+        color: #fff;
+      }
+      .become-contributor-btn {
+        min-width: 100%;
+        height: 60px;
+        border-radius: 9px;
+        background: #f8107d;
+        display: grid;
+        place-items: center;
+        margin-top: 22px;
+        svg {
+          margin-right: 12px;
+        }
+        .text {
+          align-self: center;
+          font-family: $open-sans-semi-bold;
+          font-weight: 600;
+          font-size: 17px;
+          line-height: 1;
+          text-align: left;
+          color: $white;
+        }
+      }
+      .action-bntns {
+        h3 {
+          font-family: $open-sans-semi-bold;
+          font-weight: 600;
+          font-size: 16px;
+          letter-spacing: 0.17em;
+          line-height: 1;
+          text-align: left;
+          color: $music-page-white;
+          text-transform: uppercase;
+          margin-bottom: 16px;
+          margin-top: 30px !important;
+        }
+        .authetication {
+          margin-top: 30px !important;
+        }
+        .sideElement {
+          width: 100%;
+          border-radius: 6px;
+          background-color: rgba($color: #292929, $alpha: 0.48);
+          padding: 16px;
+          @include transition;
+          margin-bottom: 15px;
+  
+          svg {
+            @include transition;
+          }
+  
+          &:hover {
+            background-color: lighten(
+              $color: rgba($color: #292929, $alpha: 1),
+              $amount: 6
+            );
+  
+            svg {
+              path,
+              circle,
+              rect {
+                fill: $red;
+              }
+            }
+          }
+  
+          .d-flex {
+            svg {
+              height: 30px;
+              background: transparent;
+            }
+  
+            .text-name {
+              font-family: $open-sans-semi-bold;
+              font-weight: 600;
+              font-size: 17px;
+              text-align: left;
+              color: #fff;
+              padding-left: 20px;
+              margin-bottom: 0px;
+              align-self: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  

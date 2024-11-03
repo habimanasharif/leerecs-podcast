@@ -1,0 +1,16 @@
+@keyframes shine {
+    to {
+        background-position-x: -300%;
+    }
+}
+#header-preloader{
+    width: 100%;
+    min-height:((300/768)*100vh);
+    border-radius: 0px 0px 20px 20px;
+    background-color: rgba($color: #292929, $alpha: 0.48);
+    background: linear-gradient(110deg, rgba($color: #292929, $alpha: 0.48) 8%, rgba($color: #292929, $alpha: 0.88) 18%, rgba($color: #292929, $alpha: 0.48) 33%);
+    border-radius: 9px;
+    background-size: 300% 300%;
+    animation: 3s shine linear infinite;
+    margin-bottom: 32px;
+}

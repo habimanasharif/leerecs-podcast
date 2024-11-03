@@ -1,0 +1,167 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#carousel-element {
+    min-height: 73.307vh;
+    min-width: 26.573vw;
+    max-width: 26.573vw;
+    max-height: 73.307vh;
+    border-radius: 18px;
+    @include mq($lg) {
+      min-width: 35vw;
+      max-width: 35vw;
+    }
+    @include mq($md) {
+      min-width: 43vw;
+      max-width: 43vw;
+    }
+    @include mq($xls) {
+      min-width: 100vw;
+      max-width: 100vw;
+    }
+  }
+  
+  #carousel-wrapper {
+    display: grid;
+    place-items: center;
+    @include mq($md) {
+      display: flex;
+      place-items: center;
+      flex-direction: column;
+    }
+    @include mq($xls) {
+      display: grid;
+      flex-direction: column;
+      place-items: start;
+    }
+  }
+  
+  #arrow-left {
+    align-self: center;
+    margin-right: 30px;
+    cursor: pointer;
+    @include mq($lg) {
+      margin-right: 10px;
+    }
+    @include mq($md) {
+      display: none;
+    }
+  }
+  #arrow-right {
+    align-self: center;
+    margin-left: 30px;
+    cursor: pointer;
+    @include mq($md) {
+      margin-left: 10px;
+    }
+    @include mq($md) {
+      display: none;
+    }
+  }
+  
+  [class^="number-slide"],
+  [class*=" number-slide"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #fff;
+    font-weight: 500;
+    height: 300px;
+    max-height: 100vh;
+  }
+  
+  .number-slide1 {
+    padding: 7.5px;
+    min-width: 100%;
+  }
+  
+  .number-slide2 {
+    background: rgb(255, 75, 64);
+    background: linear-gradient(
+      128deg,
+      rgba(255, 154, 63, 1) 0%,
+      rgba(255, 75, 64, 1) 100%
+    );
+  }
+  
+  .number-slide3 {
+    background: rgb(182, 255, 64);
+    background: linear-gradient(
+      128deg,
+      rgba(182, 255, 64, 1) 0%,
+      rgba(63, 255, 71, 1) 100%
+    );
+    background: linear-gradient(
+      128deg,
+      rgba(189, 255, 83, 1) 0%,
+      rgba(43, 250, 82, 1) 100%
+    );
+  }
+  
+  .number-slide4 {
+    background: rgb(64, 255, 242);
+    background: linear-gradient(
+      128deg,
+      rgba(64, 255, 242, 1) 0%,
+      rgba(63, 188, 255, 1) 100%
+    );
+  }
+  
+  .number-slide5 {
+    background: rgb(255, 64, 156);
+    background: linear-gradient(
+      128deg,
+      rgba(255, 64, 156, 1) 0%,
+      rgba(255, 63, 63, 1) 100%
+    );
+  }
+  .number-slide6 {
+    background: rgb(64, 76, 255);
+    background: linear-gradient(
+      128deg,
+      rgba(64, 76, 255, 1) 0%,
+      rgba(174, 63, 255, 1) 100%
+    );
+  }
+  
+  .navigation-wrapper {
+    position: relative;
+  }
+  
+  .dots {
+    display: flex;
+    padding: 20px 0;
+    justify-content: center;
+    min-width: 100%;
+    @include mq($md){
+      min-width: 100vw;
+    }
+  }
+  
+  .dot {
+    border: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    backdrop-filter: blur(34px);
+    -webkit-backdrop-filter: blur(34px);
+    border: solid 1px #ef1882;
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 5px;
+    cursor: pointer;
+    background: none;
+    transition: all 0.3s ease-out;
+  }
+  
+  .dot:focus {
+    outline: none;
+  }
+  
+  .dot.active {
+    background: #fff;
+  }
+  

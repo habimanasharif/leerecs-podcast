@@ -1,0 +1,256 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#music-side-bar{
+    padding-left:(20px/$divider);
+    padding-right:(17px/$divider);
+    padding-top: (15px/$divider);
+    padding-bottom: (15px/$divider);
+    background: #0f0f0f;
+    min-height: 100vh;
+    max-height: 100vh;
+    position: fixed;
+     width:25%;
+    overflow-y:scroll;
+    @include mq($xls){
+        display: none;
+    }
+    // @include mq($md){
+    //     display: none;
+    // }
+    @include scroll-bar;
+    @include transition;
+     &::-webkit-scrollbar {
+         width: (10px / $divider);
+         display: none;
+         @include transition;
+     }
+     &:hover{
+        &::-webkit-scrollbar {
+            width: (10px / $divider);
+            display: block;
+        }
+     }
+    .logo{
+        height: 25px;
+        background: transparent;
+        border-radius: 50%;
+    }
+    h3{
+        margin-top: 31px;
+        font-family: $open-sans-semi-bold;
+        font-weight: 600;
+        font-size: (16px);
+        letter-spacing: 0.17em;
+        line-height: 1;
+        text-align: left;
+        color: $music-page-white;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    a {
+        text-decoration: none;
+    }
+ .user-option{
+    width: 90%;
+    position: absolute;
+    bottom: 0vh;
+    z-index: 1000;
+ }
+
+    .sidebar-upload-btn{
+        .sideElement{
+            background-color: rgba($color: #10F8D4, $alpha: 0.9); 
+            .d-flex{
+            .text-name{
+                color: #0f0f0f;
+            }
+        }
+            &:hover{
+                background-color: lighten($color: rgba($color: #10F8D4, $alpha: 1), $amount: 6); 
+            } 
+        } 
+    }
+    .active{
+        .sidebar-upload-btn{
+            .sideElement{
+                background-color: rgba($color: #10F8D4, $alpha: 0.9) !important; 
+                .d-flex{
+                .text-name{
+                    color: #0f0f0f;
+                }
+            }
+                &:hover{
+                    background-color: lighten($color: rgba($color: #10F8D4, $alpha: 1), $amount: 6); 
+                } 
+            } 
+        }
+    }
+    .sideElement{
+        width:100%;
+        border-radius: 6px;
+        background-color: rgba($color: #292929, $alpha: 0.48);
+        padding: 12px;
+        @include transition;
+        margin-bottom: 15px;
+        svg{
+            @include transition;
+        }
+        &:hover{
+            background-color: lighten($color: rgba($color: #292929, $alpha: 1), $amount: 6);
+            svg{
+                path,
+                circle,
+                rect {
+                    fill:$red;
+                    
+                }
+            }
+           .song-simple{
+              svg{
+                path,
+                circle,
+                rect {
+                    fill:none !important;
+                    stroke: $red !important;
+                    
+                }
+            }
+           }
+
+        }
+        .d-flex{
+            svg{
+                height: 20px;
+                background: transparent;
+            }
+            .text-name {
+                font-family: $open-sans-semi-bold;
+                font-weight: 600;
+                font-size: 14px;
+                text-align: left;
+                color: #fff;
+                padding-left: 20px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+    
+}
+
+#mobile-nav-bar{
+    padding:15px;
+    position: fixed;
+    bottom: 0px;
+    z-index:100;
+    min-width: 100%;
+    display: none;
+    @include mq($xls){
+        display: block;
+    }
+    .colors-element{
+        flex-wrap: wrap;
+    }
+    .nav-bar-wraper {
+        min-width: 100%;
+        height: 60px;
+        border-radius: 30px;
+        background: #0f0f0f;
+        padding-left: 30px;
+        padding-right: 30px;
+        display: grid;
+        align-items: center;
+    }
+}
+
+.cursorPointer{
+    cursor: pointer;
+   }
+   .active{
+       .sideElement{
+           background-color: #383838 !important;
+           svg{
+               path,
+               circle,
+               rect {
+                   fill:$red;
+                   
+               }
+           }
+          .song-simple{
+             svg{
+               path,
+               circle,
+               rect {
+                   fill:none !important;
+                   stroke: $red !important;
+                   
+               }
+           }
+          }
+       }
+   
+   }
+   .colors-element{
+       flex-wrap: wrap;
+   }
+   .colorSideElement{
+       width:fit-content;
+       border-radius: 6px;
+       background-color: rgba($color: #292929, $alpha: 0.48);
+       margin-right: 13px;
+       padding: 12px;
+       @include transition;
+       margin-bottom: 15px;
+       svg{
+           @include transition;
+       }
+       &:hover{
+           background-color: lighten($color: rgba($color: #292929, $alpha: 1), $amount: 6);
+           svg{
+               path,
+               circle,
+               rect {
+                   fill:$red;
+                   
+               }
+           }
+          .song-simple{
+             svg{
+               path,
+               circle,
+               rect {
+                   fill:none !important;
+                   stroke: $red !important;
+                   
+               }
+           }
+          }
+   
+       }
+       .d-flex{
+           svg{
+               height: 20px;
+               background: transparent;
+           }
+           .text-name {
+               font-family: $open-sans-semi-bold;
+               font-weight: 600;
+               font-size: 14px;
+               text-align: left;
+               color: #fff;
+               padding-left: 20px;
+               margin-bottom: 0px;
+           }
+       }
+   }
+   
+   @media (min-width: 768px){
+   .col-md-1 {
+       flex: 0 0 5% !important;
+       max-width: 5% !important;
+   }
+   .col-md-11 {
+       flex: 0 0 95% !important;
+       max-width: 95% !important;
+   }
+   }

@@ -1,0 +1,57 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#Artist-new-playlist{
+    .preloader{
+    max-width:calc((100% /3) - 20px);
+    min-width:calc((100% /3) - 20px);
+    }
+}
+.preloader {
+    max-width:calc((100% /5) - 15px);
+    min-width:calc((100% /5) - 15px);
+    min-height:30vh;
+    background-color: rgba($color: #F8107D, $alpha: 0.48);
+    background: linear-gradient(110deg, rgba($color: #F8107D, $alpha: 0.48) 8%, rgba($color: #F8107D, $alpha: 0.88) 18%, rgba($color: #F8107D, $alpha: 0.48) 33%);
+    border-radius: 9px;
+    background-size: 300% 300%;
+    animation: 3s shine linear infinite;
+    @include mq($lg) {
+        max-width: calc((100% /4) - 15px);
+        min-width: calc((100% /4) - 15px);
+    }
+
+    @include mq($md) {
+        max-width: calc((100% /3) - 15px);
+        min-width: calc((100% /3) - 15px);
+    }
+
+    @include mq($xls) {
+        max-width: calc((100% /1.5) - 15px);
+        min-width: calc((100% /1.5) - 15px);
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -300%;
+    }
+}
+
+#music-preloader {
+    padding-left: 15px;
+    padding-right: 37.5px;
+    @include mq($xls){
+        padding-right: 15px;
+    }
+    .single-preloader{
+        width: 100%;
+        min-height: 60px;
+        border-radius: 0px 0px 20px 20px;
+        background-color: rgba($color: #292929, $alpha: 0.48);
+        background: linear-gradient(110deg, rgba($color: #292929, $alpha: 0.48) 8%, rgba($color: #292929, $alpha: 0.88) 18%, rgba($color: #292929, $alpha: 0.48) 33%);
+        border-radius: 9px;
+        background-size: 300% 300%;
+        animation: 3s shine linear infinite;
+        margin-bottom: 15px;
+    }
+}

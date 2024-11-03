@@ -1,0 +1,59 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#share{
+    input::-webkit-contacts-auto-fill-button {
+        visibility: hidden;
+        display: none !important;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+      }
+    .sharelist{
+        height: 50px;
+        width: 350px;
+        //padding-left: 10px;
+        @include mq($xls){
+            width: 200px;
+           }
+        button{
+            margin-left: 15px;
+        }
+    }
+    .social-media-list{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 20px;
+    }
+    
+    .arrows{
+    position: absolute;
+}
+.right-arrow{
+    right: auto;
+}
+.desktop{
+    display:contents;
+    @include mq($xls){
+       display: none;
+      }
+}
+.mobile{
+    display: none;
+    @include mq($xls){
+        display:contents;
+       }
+       .arrows{
+        position:relative;
+    }
+
+}
+.cpy-btn:focus{
+ color: blue;
+}
+.share-icon{
+    border-radius: 50%;
+    background-color: #212121;
+     box-shadow: 0 0.5rem 1rem #212121 !important;
+ }
+}

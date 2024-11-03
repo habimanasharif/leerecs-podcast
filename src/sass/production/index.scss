@@ -1,0 +1,177 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+.production-page-wrapper {
+    background-color: #19245A;
+    height: 100vh;
+}
+.production-preloader{
+    min-width:100vw;
+    min-height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:10000;
+    background-color: black;
+}
+
+#menu-main-item{
+    position: absolute;
+    z-index:100;
+    left: 0;
+    top:10px;
+    min-width: 100%;
+    transition: all ease-out 0.3s;
+    // @include mq($xxlg) {
+    //   padding-left: 10vw;
+    //   padding-right: 10vw;
+    // }
+    @include mq($xlg) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    @include mq($lg) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .mobile-nav {
+      min-width: 100%;
+      max-width: 100%;
+      display: flex;
+      justify-content: space-between;
+      // position: absolute;
+      @include mq($md) {
+        max-width: calc(100vw - 0px);
+      }
+      .rounded-circle {
+        width: 45px;
+        height: 45px;
+        background: url($root+"/assets/ico/logo.jpeg");
+        @include background-img;
+        position: relative;
+      }
+  
+      .links {
+        a {
+          font-family: $Heebo_Regular;
+          font-weight: normal;
+          font-size: 1em;
+          text-align: left;
+          color: #fff;
+          margin-right: 2.5em;
+          @include transition;
+          align-self: center;
+  
+          &:last-child {
+            margin-right: 4em;
+          }
+  
+          &:hover {
+            color: $red;
+          }
+  
+          @include mq($lg) {
+            display: none;
+          }
+        }
+      }
+  
+      .cta {
+  
+        .log-in {
+          font-family: $Heebo_Regular;
+          font-weight: normal;
+          font-size: 1em;
+          text-align: left;
+          color: $white;
+          margin-right: 2.25em;
+          cursor: pointer;
+  
+          a {
+            color: $white;
+  
+            &:hover {
+              color: $red;
+            }
+          }
+  
+          @include transition;
+          align-self: center;
+  
+          @include mq($lg) {
+            font-size: 0.7em;
+          }
+          @include mq($xls) {
+            display: none !important;
+          }
+        }
+        .register {
+          width: 175px;
+          height: 45px;
+          border-radius: 9px;
+          background: $red;
+          display: grid;
+          place-items: center;
+          @extend .log-in;
+          color: $white;
+  
+          &:hover {
+            color: $white;
+          }
+  
+          @include mq($lg) {
+            height: 40px;
+          }
+        }
+  
+        .interview {
+          @extend .register;
+          background: #10F8D4;
+          color:#077777;
+        }
+  
+        .menu-icon {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          z-index: 500;
+          // right: 15px;
+          @include transition;
+           display: none;
+  
+          @include mq($lg) {
+            display: flex;
+          }
+  
+          .line1,
+          .line2,
+          .line3 {
+            width: 30px;
+            height: 2px;
+            background-color: $white;
+            margin-bottom: 10px;
+            @include transition;
+          }
+  
+          .line2 {
+            width: 15px;
+            height: 2px;
+            align-self: flex-end;
+          }
+        }
+      }
+  
+      
+    }
+  }
+  .fixed-menu {
+    position: fixed !important;
+    top: 0 !important;
+    min-width: 100vw;
+    z-index: 10;
+    padding: 20px;
+    backdrop-filter: blur(31px);
+    -webkit-backdrop-filter: blur(31px);
+    // background-color: #B9035857;
+    border-radius: 0px 0px 20px 20px;
+    transition: background-color 2s;
+  }

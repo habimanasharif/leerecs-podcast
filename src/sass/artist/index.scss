@@ -1,0 +1,632 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#artist-profile{
+    .loader{
+        position: fixed;
+        top: 70px;
+        left:15%;
+        z-index: 1000;
+    }
+    .cont{
+        height: 40px;
+        background-color: #ccc;
+        border-radius: 6.75px;
+        position: relative;
+        
+        
+    }
+    .cont .progress-bar{
+        position: absolute;
+        border-radius: 6.75px;
+        height: 100%;
+        background-color: #7171ff;
+        width: 5%;
+        transition: width 2s;
+        &:hover{
+            .message{
+                color: #fff !important;
+            }
+        }
+    
+    }
+    .message{
+        position: absolute;
+        z-index: 100px;
+        width: 100%;
+        top:10px;
+        @include mq($xls){
+            font-size: small !important;
+            width: 90% !important;
+    
+        }
+        // text-align: center;
+    }
+    .progress-container{
+        position: absolute;
+        width: 80%;
+        @include mq($xls){
+            width: 100% !important;
+        }
+        &:hover{
+            .message{
+                color: #fff !important;
+            }
+            .successfull{
+                background-color: #218838!important;
+            }
+            .song-link{
+                color: #fff !important;
+            }
+        }
+    }
+    @keyframes progress-animation{
+        0%{width: 0%;}
+        100%{width: 100%;}
+    }
+    .close{
+        position: absolute;
+        z-index: 2000;
+        right: 20px;
+        top:7px;
+    }
+    .loaders{
+        position: absolute;
+        left: 15%;
+        z-index: 2000;
+    }
+    .image-placeholder{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top:40%;
+        font-size: 2rem;
+    }
+    .follow-container{
+     -webkit-backface-visibility: hidden;
+    }
+    #featured-artists .col-md-3 {
+        max-width: calc(30% - 15px)!important;
+        min-width: calc(30% - 15px)!important;
+        }
+    .slider{
+        position: relative;
+        overflow: hidden;
+    }
+    .artist-type {
+        color: #b8b8b8;
+        font-weight: 400;
+        font-size: 0.875rem;
+        }
+    .l-hight{
+  line-height: 1;
+        }
+    .col-middle{
+        @include mq($xls){
+            margin: auto;
+        }
+     }
+     .col-7{
+        @include mq($xls){
+            flex: 0 0 68.333333%;
+            max-width: 68.333333%;
+            margin: auto;
+            margin-top: 100px;
+        }
+     }
+    .edit-profile-btn{
+        background-color: #f8107d;
+        padding: 10px 10px;
+        width: 140px;
+        position:absolute;
+        z-index: 1000;
+        cursor: pointer;
+        right:60px;
+        top:85px;
+        text-align: center;
+        border-radius: 9px;
+        font-weight: 900;
+        margin-left: 20px;
+    }
+    .filter-blur{
+        filter: blur(3px) saturate(180%);
+    }
+    .header-upload-dropzone{
+        background-color: #fff;
+        position: absolute;
+        top:-10%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 12px 12px;
+        border-radius: 50%;
+        @include mq($xlsh){
+            top:80px !important;
+            left:300px !important;
+        }
+    }
+    .edit-profile-btn{
+        color: #ffff;
+        cursor: pointer;
+    }
+    .artist-cover{
+        width: 100%;
+        height: 40vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 15%;
+        position: relative;
+        background-attachment:local;
+        top:0;
+        z-index: 0;
+    }
+    @include mq($xlsh){
+        .artist-cover {
+            height: 50vh !important;
+          }
+    }
+    .song-owner{
+        background-color: #333;
+        border-radius: 9px ;
+        cursor: pointer;
+    }
+    .artist{
+        min-height:auto;
+        border-radius: 9px;
+        position: relative;
+        margin-bottom: 5px;
+        .mt-4{
+            @include mq($xxs){
+            margin-top: 0.875rem !important;}
+        }
+        .artist-wrapper{
+           width: 100%;
+           border-radius: 50%;
+           background-color: #333;
+           box-shadow: 0 8px 24px rgba(0,0,0,.5);
+           -webkit-box-shadow: 0 8px 24px rgba(0,0,0,.5);
+           padding: 0px;
+           margin: 0px;
+           border: 0px;
+           padding-bottom: 100%;
+           position: relative;
+
+           img{
+               width: 100%;
+               height:100%;
+               display: block;
+               border-radius: 9px;
+               position: absolute;
+               left:0;
+               top:0;
+               border-radius: 50%;
+               object-fit: cover;
+               object-position: center center;
+           }
+        }
+   }
+   .artist-name{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+}
+.artist-title{
+    color: #b3b3b3;
+    font: 0.875rem;
+    font-weight: 400;
+}
+    .artist-nav-text{
+        color: #fff !important;
+        
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 2s;
+
+     }
+    .nav-active{
+        border-bottom: #f8107d 3px solid;
+    }
+     @include mq($xlsh){
+        .artist-nav-text{
+            color: #fff !important;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+    
+         }
+     }
+     .artist-btn{
+        color:#fff;
+        border:1px solid #fff;
+        font-weight: 700;
+    
+     }
+    .cover-profile{
+        min-height:27vh;
+        position: relative;
+        margin-bottom: 5px;
+        border-radius: 9px;
+        .upload-dropzone{
+            cursor: pointer;
+            position: absolute;
+            top:15px;
+            right:7px;
+            color:black;
+            background-color: #efe9f8;
+            padding: 10px 10px;
+            border-radius: 50%;
+
+        }
+        .cover-wrapper-profile{
+           width: 100%;
+           border-radius: 9px;
+           background-color: #333;
+           box-shadow: 0 8px 24px rgba(0,0,0,.5);
+           -webkit-box-shadow: 0 8px 24px rgba(0,0,0,.5);
+           padding: 0px;
+           margin: 0px;
+           border: 0px;
+           padding-bottom: 100%;
+           position: relative;
+    
+           img{
+               width: 100%;
+               height: 100%;
+               display: block;
+               position: absolute;
+              border-radius: 9px;
+               left:0;
+               top:0;
+               object-fit: cover;
+               object-position: center center;
+           }
+        }
+    }
+    .artist-header{
+        width: 100%;
+        min-height:50vh;
+        z-index: 50;
+        position: relative;
+        background-color: transparent;
+        border-radius: 0px 0px 0px 0px;
+        background-blend-mode: multiply;
+        @include background-img;
+        display: grid;
+        align-items: flex-end;
+        padding-left: 20px;
+        padding-bottom: 30px;
+        padding-right: 36px;
+        margin-top: -30vh;
+        margin-bottom: 32px;
+
+        @include mq($xls) {
+            padding-bottom: 0px !important;
+            padding-left: 0px !important;
+            margin-bottom: 6px !important;
+        }
+       .bio{
+        text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+       }
+       .real_name{
+        overflow: hidden;
+        // width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include mq($xlsh){
+        max-width: 300px;
+        }
+       }
+       .social-icon{
+        color: #fff;
+        @include mq($xls){
+            padding-left: 15px !important;
+        }
+        // position: absolute;
+        // top:15vh;
+        // right: 30px;
+       }
+       @include mq($lg){
+        .social-icon{
+            top:5vh;
+           }
+           .col-3{
+            flex: 0 0 30%;
+max-width: 30%;
+           }
+       }
+      
+        .play-all-music {
+            display: none;
+
+            @include mq($xls) {
+                display: block;
+                width: 75vw;
+                height: 50px;
+                border-radius: 25px;
+                background: #f8107d;
+                font-family: $open-sans-semi-bold;
+                font-weight: 600;
+                font-size: 16px;
+                letter-spacing: 0.17em;
+                line-height: 1;
+                text-align: left;
+                display: grid;
+                place-items: center;
+                color: rgba($color: $music-page-white, $alpha: 1);
+                position: absolute;
+                left: 12.5vw;
+                transform: translateY(25px);
+            }
+        }
+ @include mq($md){
+    .col-5 {
+        flex: 0 0 49.666667%;
+        max-width: 41.666667%;
+      }
+ }
+        .d-flex {
+            svg {
+                align-self: center;
+
+                @include mq($xls) {
+                    display: none;
+                }
+            }
+            .share-btn{
+                color: #fff;
+                @include mq($xls) {
+                    display: block;
+                }
+                svg{
+                    @include mq($xls) {
+                    display: block;
+                }
+                }
+            }
+        }
+
+        .panel-title {
+            font-family: $open-sans-semi-bold;
+            font-weight: 400;
+            font-size: 0.8125;
+            letter-spacing: 0.17em;
+            color: #fff;
+            line-height: 1;
+            text-align: left;
+            color: $music-page-white;
+            text-transform:capitalize;
+            margin-bottom: 15px;
+           svg{
+            display: inline;
+           }
+           div{
+            display: inline;
+           }
+            @include mq($xls) {
+                padding-left: 15px;
+            }
+        }
+
+        .playlist-title {
+            font-family: $GTSectraDisplay_Bold;
+            font-weight: 900;
+            font-size: 3rem;
+            letter-spacing: 0.0em;
+            line-height: 1;
+            text-align: left;
+            color: $music-page-white;
+            // text-transform: capitalize;
+            margin-bottom: 15px;
+
+            @include mq($xls) {
+                padding-left: 15px;
+                font-size: 50px!important;
+                line-height: 1.3 !important;
+            }
+        }
+
+        .playlist-desc {
+            width: (100%);
+            font-family: $open-sans-semi-bold;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.3;
+            text-align: left;
+            color: rgba($color: $music-page-white, $alpha: .39);
+
+            @include mq($xls) {
+                padding-left: 15px;
+                padding-bottom: 5px;
+                width: (100%);
+            }
+
+        }
+
+        .user-details{
+            position: relative;
+            top: 5vh;
+            .d-flex{
+                svg{
+                    display: inline-block;
+                }
+            }
+            
+        }
+        @include mq($lg){
+            .user-details{
+                position: relative;
+                top: 3vh;
+                
+            }
+        }
+       
+    }
+
+    .table-heading {
+        font-family: $open-sans-semi-bold;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18.2px;
+        text-align: left;
+        color: $white;
+        padding-left: 20px;
+        padding-right: 37px;
+        margin-bottom: 1px;
+
+        @include mq($xls) {
+            padding-right: 15px !important;
+            padding-left: 15px !important;
+        }
+
+        hr {
+            background: transparent;
+            border: 0.5px solid #efe9f8;
+            opacity: 0.24;
+
+        }
+
+        @include mq($xls) {
+            // display: none;
+        }
+
+    }
+
+    h3 {
+        margin-top: 16px;
+        font-family: $open-sans-semi-bold;
+        font-weight: 600;
+        font-size: (16px);
+        letter-spacing: 0.17em;
+        line-height: 1;
+        text-align: left;
+        color: $music-page-white;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    .the-music {
+        padding-left: 20px;
+        padding-right: 37px;
+        margin-bottom: 5px;
+
+        @include mq($xls) {
+            padding-right: 15px !important;
+            padding-left: 15px !important;
+        }
+
+    }
+
+    .single-music {
+        padding: 7px;
+
+        @include mq($xls) {
+            width: 100%;
+            min-height: 9px;
+            border-radius: 6px;
+            background: rgba($color:#292929, $alpha:0.48);
+            padding: 10px !important;
+            align-items: center;
+        }
+
+        @include transition;
+
+        &:hover {
+            border-radius: 6px;
+            background: rgba($color: #292929, $alpha: .48);
+        }
+
+        .numbering {
+            font-family: $open-sans-extra-bold;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 1;
+            text-align: left;
+            color: #efe9f8;
+            place-self: center;
+
+        }
+
+        .music {
+            .music-thumbnail {
+                min-width: 40px;
+                height: 40px;
+                border-radius: 9px;
+                @include background-img;
+                margin-right: 20px;
+            }
+
+            .music-info {
+                place-self: center;
+                width:80%;
+
+                .music-title {
+                    font-family: $open-sans-semi-bold;
+                    font-weight: 600;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    font-size: 16px;
+                    line-height: 1;
+                    text-align: left;
+                    color: #efe9f8;
+                    margin-bottom: 5px;
+                    text-transform: capitalize;
+                }
+
+                .music-artist {
+                    font-family: $open-sans-regular;
+                    overflow: hidden;
+                    white-space:nowrap;
+                    font-weight: normal;
+                    font-size: 14px;
+                    text-overflow: ellipsis;
+                    width: 150px;
+                    line-height: 1;
+                    text-align: left;
+                    color: #efe9f8;
+                    opacity: 0.37;
+
+                }
+            }
+        }
+
+        .album {
+            @extend .numbering;
+            font-family: $open-sans-regular;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 1;
+            text-align: left;
+            color: #efe9f8;
+
+        }
+
+        .react {
+            @extend .numbering;
+
+            svg {
+                path {
+                    @include transition
+                }
+
+                &:hover {
+                    path {
+                        fill: $red;
+                        stroke: none;
+                    }
+                }
+            }
+        }
+
+        .play {
+            @extend .numbering;
+            @extend .react;
+        }
+    }
+}

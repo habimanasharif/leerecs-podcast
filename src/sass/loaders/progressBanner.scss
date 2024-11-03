@@ -1,0 +1,70 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#progress_banner{
+.cont{
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 6.75px;
+    position: relative;
+    
+    
+}
+.cont .progress-bar{
+    position: absolute;
+    border-radius: 6.75px;
+    height: 100%;
+    background-color: #7171ff;
+    width: 5%;
+    transition: width 2s;
+    &:hover{
+        .message{
+            color: #fff !important;
+        }
+    }
+
+}
+.message{
+    position: absolute;
+    z-index: 100px;
+    width: 100%;
+    top:10px;
+    @include mq($xls){
+        font-size: small !important;
+        width: 90% !important;
+
+    }
+    // text-align: center;
+}
+.progress-container{
+    position: absolute;
+    width: 80%;
+    @include mq($xls){
+        width: 100% !important;
+    }
+    &:hover{
+        .message{
+            color: #fff !important;
+        }
+        .successfull{
+            background-color: #218838!important;
+        }
+        .song-link{
+            color: #fff !important;
+        }
+    }
+}
+@keyframes progress-animation{
+    0%{width: 0%;}
+    100%{width: 100%;}
+}
+.close{
+    position: absolute;
+    z-index: 2000;
+    right: 20px;
+    top:7px;
+}
+.song-link{
+    text-decoration: underline !important;
+    color: black !important;
+}
+}

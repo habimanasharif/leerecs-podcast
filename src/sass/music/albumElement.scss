@@ -1,0 +1,141 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+.music-e-card{
+    background-color:#181818!important;
+    padding: 16px;
+    transition: background-color .3s ease;
+    
+}
+
+.music-e-card:hover{
+    background-color: #282828 !important;
+    
+    .music-play-btn{
+    opacity: 1;
+    pointer-events: auto;
+    position: absolute;
+    transform: translateY(1);
+    
+    }
+    .music-play-btn-artist{
+        opacity: 1;
+        pointer-events: auto;
+        position: absolute;
+        transform: translateY(1);
+        
+        }
+        .card-share-btn{
+            opacity: 1;
+        }
+    
+}
+a:hover{
+    color: #fff;
+}
+
+.music-play-btn{
+    right:8px;
+    opacity: 0;
+    bottom: 12px;   
+
+    transition: all .3s ease;
+    position: absolute;
+    z-index:2;
+    
+}
+@include mq($xls){
+    .music-play-btn{
+        bottom: 4px; 
+        
+    }
+}
+
+@include mq($md){
+    .music-play-btn{
+        bottom: 4px; 
+        
+    }
+}
+@include mq($lg){
+    .music-play-btn{
+        bottom: 4px; 
+        
+    }
+}
+
+#Artist-new-playlist{
+    .col-md-3{
+        width: 30%;
+    }
+}
+
+.cover{
+    min-height:27vh;
+    border-radius: 9px;
+    position: relative;
+    margin-bottom: 5px;
+    .cover-wrapper{
+       width: 100%;
+       border-radius: 9px;
+       background-color: #333;
+    //    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+    //    -webkit-box-shadow: 0 8px 24px rgba(0,0,0,.5);
+       padding: 0px;
+       margin: 0px;
+       border: 0px;
+       padding-bottom: 100%;
+       position: relative;
+
+       img{
+           width: 100%;
+           height: 100%;
+           display: block;
+           position: absolute;
+           border-radius: 9px;
+           left:0;
+           top:0;
+           object-fit: cover;
+           object-position: center center;
+       }
+    }
+}
+
+.numbering {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color:var(--text-subdued,#b8b8b8);
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+.numbering:hover{
+    text-decoration: underline;
+}
+
+.song-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: $open-sans-semi-bold;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.17em;
+    line-height: 1;
+    text-align: left;
+    color: #ffff;
+    padding-bottom: 2px;
+
+}
+.card-share-btn{
+    position:absolute;
+    opacity: 0;
+    bottom:4vh;
+    right:15px;
+    z-index: 10;
+}
+.card {
+    background-color: rgba($color: #000000, $alpha: 0);
+    margin-left: 7px !important;
+    margin-right: 7px !important;
+    border: 0px solid rgba(0, 0, 0, 0.125) !important;
+  }

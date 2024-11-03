@@ -1,0 +1,83 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+  #playlist_info {
+    .background-img {
+      border-radius: 21px;
+      width: 270px !important;
+      min-height: 300px !important;
+      @include mq($xls){
+        min-height: 300px !important;
+        width: 100% !important;
+      }
+      @include background-img;
+    }
+    .background-img-profile {
+      border-radius:0px !important;
+      width: 270px !important;
+      min-height: 220px !important;
+      background-position: center !important;
+      background-size: cover !important;
+      @include mq($xls){
+        min-height: 300px !important;
+        width: 100% !important;
+        margin: 0rem 1rem !important;
+      }
+      @include background-img;
+    }
+    .col-md-3{
+      @include mq($md){
+        padding-left: 15px !important;
+      }
+    }
+    .pd-l{
+      @include mq($xls){
+        padding-left: 0px !important;
+      }
+    }
+    .col-md-7{
+      @include mq($xls){
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+    }
+    .music-details {
+      display: grid;
+      align-content: flex-end;
+      @include mq($xls){
+        padding:0px;
+      }
+      .Playlist-title {
+        font-family: $GTSectraDisplay_Bold;
+        font-size: 2.6875em;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 15px;
+        @include mq($xls){
+          margin-top:15px;
+        }
+      }
+      .Playlist-Description {
+        font-family: $Heebo_Light;
+        font-size: 0.875em;
+        font-weight: 500;
+        line-height: 1.1;
+  
+        margin-bottom: 20px;
+      }
+      .btn-custom{
+        font-family: $Heebo_Light;
+        font-size: 0.875em;
+        font-weight: 500;
+        line-height: 1;
+        min-height: 50px;
+        border-radius: 100px;
+        padding-right:17px;
+        padding-top: 13px ;
+        padding-left:25px;
+        display: grid;
+        
+      }
+    }
+  }
+  

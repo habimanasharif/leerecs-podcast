@@ -1,0 +1,37 @@
+
+#info{
+.btn-error {
+    background-color: #FF7171;
+}
+
+.btn-success {
+    background-color: #5DD97C;
+    color: #000;
+}
+.close-icon{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    width:25px;
+}
+.on-top {
+    z-index: 2000 !important;
+    width: 75% !important;
+}
+.banner-link{
+    color:#000 !important;
+    text-decoration: underline !important;
+}
+.btn-success{
+    &:hover{
+        .banner-link{
+            color:#fff !important
+        } 
+    }
+}
+.bg-info{
+    &:hover{
+        background-color: #0f7282 !important;
+    }
+}
+}

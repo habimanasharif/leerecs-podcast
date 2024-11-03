@@ -1,0 +1,127 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+.workings-page-wrapper {
+    position: relative;
+    padding-top: 2vw;
+    top: -12vh;
+    background-color: #19245a;
+    background-size: cover;
+    height: max-content;
+    width: 100%;
+  
+    @include mq($md) {
+      padding-top: 10vh;
+    }
+  
+    .workings-page-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2vw;
+      width: 93%;
+      margin: auto;
+  
+      .workings-title {
+        h1 {
+          font-family: $SFProDisplay_Bold;
+          font-size: 5vw;
+        }
+  
+        p {
+          font-family: $SFProDisplay_Regular;
+          font-size: 1.234375em;
+          width: 43vw;
+          line-height: 1.16;
+          margin-bottom: 18px;
+          @include mq($md) {
+            width: 98%;
+          }
+          @include mq($lg) {
+            font-size: 1em;
+          }
+          @include mq($xls) {
+            font-size: 1em;
+          }
+        }
+  
+        @include mq($md) {
+          margin-top: 2vh;
+          h1 {
+            font-size: 12vw;
+          }
+        }
+      }
+  
+      .workings-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2vw;
+  
+        @include mq($md) {
+          grid-template-columns: 1fr 1fr ;
+          gap: 20px;
+        }
+        @include mq($xls) {
+          grid-template-columns: 1fr ;
+          gap: 20px;
+        }
+  
+        .workings-card-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: black;
+          border-radius: 1.5vw;
+          padding: 1.5vw;
+          background-color: white;
+          background-repeat: no-repeat;
+          background-size: 110%;
+          background-position: top;
+          background-position-y:-20px;
+          @include mq($lg){
+             background-position-y:-10px; 
+          }
+          @include mq($md){
+             background-position-y:-24px; 
+          }
+           @include mq($xls){
+             background-position-y:-30px; 
+          }
+          @include mq($xms){
+             background-position-y:-20px; 
+          }
+          @include mq($xxs){
+             background-position-y:-15px; 
+          }
+  
+          .workings-icon {
+            margin-top: 12vh;
+            margin-bottom: 2vw;
+  
+            @include mq($md) {
+              margin-top: 18vh;
+              margin-bottom: 5vw;
+            }
+          }
+  
+          h1 {
+            font-family: $SFProDisplay_Bold;
+            align-self: flex-end;
+            font-size: 5vw;
+            color: rgba(255, 255, 255, 0.4);
+  
+            @include mq($md) {
+              font-size: 20vw;
+            }
+          }
+  
+          p {
+            font-family: $SFProDisplay_Regular;
+            font-size: 0.875em;
+            opacity: 0.6;
+            line-height: 1.1;
+          }
+        }
+      }
+    }
+  }
+  

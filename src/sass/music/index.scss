@@ -1,0 +1,19 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#music-home-page {
+    background-color: #0f0f0f;
+    .contents{
+        height: 100vh;
+        border-radius: 0px 0px 0px 0px;
+        background: #171717;
+         padding-left: 0px !important;
+        max-height: 100vh;
+        overflow-y: scroll;
+        @include scroll-bar;
+        // padding-bottom: 30px;
+    }
+    .bg-color{
+        // background: #171717;
+        padding-bottom: 20px; 
+    }
+}

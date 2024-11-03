@@ -1,0 +1,80 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#form-input{
+    .input-group-component,
+    .input-group-form {
+        place-items: center;
+        border-radius: 9px;
+        background: rgba($color: #383838, $alpha: 0.39);
+        width: 100%;
+        height: (60px / $divider);
+        background: #383838;
+        border: none;
+        padding-left: 15px;
+
+        input,
+        textarea,
+        .form-control {
+            width: calc(100% - 30px);
+            background: #383838;
+            border: none;
+            padding-left: 15px;
+            font-family: $open-sans-regular;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.17em;
+            line-height: 1;
+            text-align: left;
+            color: #dbdbdb;
+
+            &:focus {
+                outline: none;
+                font-family: $open-sans-regular;
+                font-weight: 600;
+                font-size: 14px;
+                letter-spacing: 0.17em;
+                line-height: 1;
+                text-align: left;
+                color: #dbdbdb;
+                outline: none;
+                box-shadow: 0 0 0 3px rgba($color: $red, $alpha: 0.0);
+            }
+
+            &:input-placeholder {
+                font-family: $open-sans-regular;
+                font-weight: 600;
+                font-size: 14px;
+                letter-spacing: 0.17em;
+                line-height: 1;
+                text-align: left;
+                color: #dbdbdb;
+            }
+            &:-webkit-autofill,
+            &:-webkit-internal-autofill-previewed,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+                -webkit-box-shadow: 0 0 0 30px red inset !important;
+                 font-family: $open-sans-regular;
+                 background-color: red;
+                 font-weight: 600;
+                 font-size: 14px;
+                 letter-spacing: 0.17em;
+                 line-height: 1;
+                 text-align: left;
+                 color: #dbdbdb;
+            }
+
+        }
+
+    }
+    .input-group-form{
+        min-height: calc(20vh + 28px);
+        place-items: start;
+        padding-top: 14px;
+        textarea {
+            min-height: 100%;
+            @include scroll-bar;
+        }
+    }
+}

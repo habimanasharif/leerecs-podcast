@@ -1,0 +1,143 @@
+@import "../sass/variables.scss";
+@import "../sass/mixins.scss";
+@import "../sass/font.scss";
+@import "bootstrap/dist/css/bootstrap.min.css";
+html,
+*,
+body {
+  scroll-behavior: smooth;
+  // -webkit-appearance: none;
+}
+body {
+  background-color: #000;
+  @include scroll-bar;
+  max-width: 100vw;
+  overflow-x: hidden;
+  a {
+    text-decoration: none !important;
+  }
+  .wrap {
+    @include mq($xls) {
+      width: 100% !important;
+      flex-wrap: wrap !important;
+      max-width: 100vw !important;
+      overflow: scroll !important;
+    }
+  }
+}
+
+svg{
+  cursor: pointer;
+}
+.pointer{
+  cursor: pointer !important;
+}
+
+
+.close-icon{
+  position: absolute;
+  top:10px;
+  right:30px;
+  width:25px;
+}
+
+.loaders{
+  position: fixed !important;
+  top:50px;
+  left:12%;
+  z-index: 1000;
+}
+@include mq($xls) {
+  .loaders{
+    position:fixed !important;
+    top: 50px !important;;
+    left: 6% !important;
+    z-index: 1000;
+  }
+}
+@include mq($md) {
+  .loaders{
+    position:fixed!important;
+    top:150px;
+    left:90px;
+    z-index: 1000;
+  }
+}
+
+.btn-loading,
+.btn-error,
+.btn-success {
+  background-color: #7171ff;
+  height: (60px / $divider);
+  color: $white;
+  font-weight: 300;
+  font-size: (18px / $divider);
+  line-height: (30px / $divider);
+  text-align: left;
+  margin-bottom: (30px / $divider);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: (9px / $divider);
+  font-family: $open-sans-semi-bold;
+  font-weight: 500;
+
+  .text {
+    display: grid;
+    place-items: center;
+  }
+}
+.btn-error {
+  background-color: #FF7171;
+  padding-left:20px ;
+}
+
+.btn-success {
+  background-color: #5DD97C;
+  padding-left:20px ;
+  color: #000;
+}
+.input-group {
+  @include mq($xls){
+    width: (100vw/1.5);
+  }
+  place-items: center;
+  border-radius: 9px;
+  background: rgba($color: #383838, $alpha: 0.39);
+  width: (100vw/2);
+  height: (60px / $divider);
+  border: none;
+  padding-left: 15px;
+
+ 
+
+  input {
+      width: calc(100% - 30px);
+      background: rgba($color: #383838, $alpha: 0.0);
+      border: none;
+      padding-left: 15px;
+      font-family: $open-sans-regular;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.17em;
+      line-height: 1;
+      text-align: left;
+      color: #bfbfbf;
+
+      &:focus {
+          outline: none;
+      }
+
+      &:input-placeholder {
+          font-family: $open-sans-regular;
+          font-weight: 600;
+          font-size: 14px;
+          letter-spacing: 0.17em;
+          line-height: 1;
+          text-align: left;
+          color: #dbdbdb;
+      }
+
+  }
+
+}

@@ -1,0 +1,228 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#events {
+    position: relative;
+    width: 100%;
+    padding: 2em;
+    padding-bottom: 0px;
+    @include mq($md) {
+      height: auto;
+    }
+    @include mq($xxlg) {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+  
+    @include mq($xlg) {
+      padding: 30px;
+    }
+  
+    @include mq($lg) {
+      padding: 15px;
+    }
+    .text {
+      padding: 0.8em;
+      background: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      width: 100%;
+      max-width: 100%;
+      backdrop-filter: blur(5px);
+      border-radius: 0 20px 20px 20px;
+      line-height: 1em;
+  
+      & > span {
+        font-size: 0.7em;
+        font-weight: bold;
+      }
+  
+      @include mq($md) {
+        bottom: 0;
+        border-radius: 0 5px 5px 5px;
+        width: 96%;
+        left: 2%;
+      }
+    }
+    .header {
+      position: relative;
+      display: flex;
+  
+      @include mq($md) {
+        flex-direction: column;
+      }
+    }
+  
+    //title box
+  
+    .main-title {
+      font-size: 4em;
+      font-family: $GTSectraDisplay_Bold;
+      font-weight: bold;
+      line-height: 1.1em;
+      text-align: left;
+      color: $white;
+  
+      @include mq($md) {
+        font-size: 3em;
+      }
+    }
+  
+    .description-text {
+      margin-bottom: 2em;
+      color: $white;
+      font-size: 1.2em;
+    }
+  
+    //pagination
+  
+    .pagination {
+      .big-text-wrapper {
+        position: absolute;
+        top: 1.5em;
+        right: 0;
+        max-height: 15em;
+        z-index: 1;
+        overflow: hidden;
+  
+        //   position: relative;
+        //   top: -3em;
+        .music-text {
+          text-align: right;
+          font-family: $Heebo_Medium;
+          font-size: 12em;
+          max-height: 200px;
+          line-height: 0.9;
+          color: black;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0);
+          /* Will override color (regardless of order) */
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: rgba(255, 255, 255, 0.16);
+          background: transparent;
+          // width: 714.76px;
+          height: 201.29px;
+  
+          @include mq($lg) {
+            font-size: 8em;
+            height: 150.29px;
+            max-height: 150.29px;
+          }
+        }
+  
+        @include mq($md) {
+          display: none;
+        }
+      }
+  
+      //   border: 2px solid yellow;
+      width: 50%;
+  
+      @include mq($md) {
+        position: unset;
+        width: 70%;
+        // border: 2px solid yellow;
+        margin-bottom: 2em;
+      }
+  
+      .arrows {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        column-gap: 4em;
+        img {
+          height: 30px;
+          width: auto;
+          cursor: pointer;
+        }
+  
+        .right {
+          width: 100px;
+          height: 50px;
+        }
+  
+        @include mq($md) {
+          position: relative;
+          margin-bottom: 1.5em;
+        }
+      }
+      
+  
+      .pagination-buttons {
+        position: absolute;
+        bottom: 0em;
+        right: 46%;
+  
+  
+        display: flex;
+        column-gap: 1em;
+        @include mq($xls){
+          right: 37%;
+        }
+  
+        & > div {
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          border-radius: 50%;
+          border: 1px solid white;
+          height: 20px;
+          width: 20px;
+          min-height: 20px;
+          min-width: 20px;
+          max-height: 20px;
+          max-width: 20px;
+        }
+  
+        .active {
+          border-radius: 50%;
+          background: white;
+        }
+  
+        & > div:hover {
+          background: white;
+        }
+  
+        @include mq($md) {
+          margin-bottom: 1em;
+  
+          & > div {
+            border-radius: 50%;
+            border: 1px solid white;
+            height: 20px;
+            width: 20px;
+            min-height: 20px;
+            min-width: 20px;
+            max-height: 20px;
+            max-width: 20px;
+          }
+        }
+      }
+    }
+  
+    //boxes
+    .box-wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: 1em;
+      row-gap: 1em;
+  
+      @include mq($md) {
+        margin-bottom: 3em;
+        width: 100%;
+      }
+    }
+    .m-top{
+      padding-top: 30px !important;
+      @include mq($xls) {
+        padding-top: 0px !important;
+      }
+    }
+    .moreLink{
+        color:#F8107D;
+        cursor: pointer;
+        z-index: 1000;
+        
+      }
+  }

@@ -1,0 +1,200 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#all-music-in-playlist{
+    .apdate-btn{
+        padding: 10px 10px;
+        background-color: $red;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        width: 150px;
+        border: none;
+        border-radius:10px;
+    }
+    .add-songs-to-playlist{
+        background-color: #f8107d;
+        cursor: pointer;
+        color: #fff;
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        padding-top: 13px;
+        border-radius: 15px;
+        margin:auto
+    }
+    .header{
+        width: 100%;
+        min-height:((300/768)*100vh);
+        background-color: $music-page-white;
+        border-radius: 0px 0px 20px 20px;
+        background-blend-mode: multiply;
+        @include background-img;
+        display: grid;
+        align-items: flex-end;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        padding-right: 36px;
+        margin-bottom: 32px;
+        .upload-dropzone{
+            cursor: pointer;
+            position: absolute;
+            top:70px;
+            right:500px;
+            color:black;
+            background-color: #efe9f8;
+            padding: 10px 10px;
+            border-radius: 50%;
+
+        }
+        .d-flex{
+            svg {
+                align-self: center;
+            }
+        }
+        .panel-title{
+            font-family: $open-sans-semi-bold;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.17em;
+            line-height: 1;
+            text-align: left;
+            color: #9f9f9f;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .playlist-title{
+            font-family: $open-sans-extra-bold;
+            font-weight: 900;
+            font-size: 65px;
+            letter-spacing: 0.0em;
+            line-height: 1;
+            text-align: left;
+            color: $music-page-white;
+            text-transform: capitalize;
+            margin-bottom: 9px;
+        }
+        .playlist-desc{
+            width: ((785/1366)*100%);
+            font-family: $open-sans-semi-bold;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.3;
+            text-align: left;
+            color:  hsl(0, 0%, 85.9%);
+
+        }
+    }
+    .table-heading{
+        font-family: $open-sans-semi-bold;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18.2px;
+        text-align: left;
+        color: $white;
+        padding-left: 20px;
+        padding-right: 37px;
+        hr{
+            background: transparent;
+            border: 0.5px solid #efe9f8;
+            opacity: 0.24;
+
+        }
+
+    }
+    h3{
+        margin-top: 16px;
+        font-family: $open-sans-semi-bold;
+        font-weight: 600;
+        font-size: (16px);
+        letter-spacing: 0.17em;
+        line-height: 1;
+        text-align: left;
+        color: $music-page-white;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    .the-music{
+        padding-left: 20px;
+        padding-right: 37px;
+        margin-bottom: 15px;
+    }
+    .single-music{
+        padding: 7px;
+        @include transition;
+        &:hover{
+            border-radius: 6px;
+            background: rgba($color: #292929, $alpha: .48);
+        }
+
+        .numbering{
+            font-family: $open-sans-extra-bold;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 1;
+            text-align: left;
+            color: #efe9f8;
+            place-self: center;
+
+        }
+        .music{
+            .music-thumbnail{
+                width: 40px;
+                height: 40px;
+                border-radius: 9px;
+                @include background-img;
+                margin-right: 20px;
+            }
+            .music-info{
+                place-self: center;
+                .music-title{
+                    font-family: $open-sans-semi-bold;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 1;
+                    text-align: left;
+                    color: #efe9f8;
+                    margin-bottom: 5px;
+                    text-transform: capitalize;
+                }
+                .music-artist{
+                    font-family: $open-sans-regular;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 1;
+                    text-align: left;
+                    color: #efe9f8;
+                    opacity: 0.37;
+
+                }
+            }
+        }
+        .album{
+            @extend .numbering;
+            font-family: $open-sans-regular;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 1;
+            text-align: left;
+            color: #efe9f8;
+
+        }
+        .react{
+            @extend .numbering;
+            svg{
+                path{
+                    @include transition
+                }
+                &:hover{
+                    path{
+                        fill:$red;
+                        stroke: none;
+                    }
+                }
+            }
+        }
+        .play{
+            @extend .numbering;
+            @extend .react;
+        }
+    }
+}

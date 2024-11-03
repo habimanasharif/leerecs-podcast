@@ -1,0 +1,43 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#modal{
+    position: fixed;
+    z-index: 300;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: rgba($color: $pure_black, $alpha: 0.44);
+    display: grid;
+    place-items: center;
+    top:0;
+    left:0;
+    .panel {
+        height: auto;
+        border-radius: 9px;
+        background: $panel_color;
+        padding:15px;
+        margin-bottom: 20px;
+        
+    }
+
+    .top-button {
+        margin-bottom: 17px;
+
+        .title {
+            font-family: $open-sans-semi-bold;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.17em;
+            line-height: 1;
+            text-align: left;
+            color: $music-page-white;
+            align-self: center;
+        }
+
+        svg {
+            align-self: center;
+            cursor: pointer;
+            color:#fff;
+            fill: #fff;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+#wave-style{
+    width:100%;
+    display:grid;
+    justify-content: center;
+    .all-btn{
+        display: flex;
+        height:45px;
+        place-items: center;
+        align-items: center;
+        .btn-1{
+            margin-right:20px;
+            svg{
+                // mix-blend-mode: color;
+                // opacity: .5;
+                path{
+                    fill:#fff;
+                }
+            }
+        }
+    }
+}

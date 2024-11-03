@@ -1,0 +1,129 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#add-music {
+    margin-top: 77px;
+    .css-1s2u09g-control{
+        background-color: #383838 !important;
+        color:#383838 !important;
+        border-color: #383838 !important;
+    }
+    .css-1pahdxg-control{
+        background-color: #383838 !important;
+        color:#383838 !important;
+        border-color: #383838 !important;
+    }
+    .css_26l3qy{
+        background-color: #383838 !important;
+        color:#383838 !important;
+    }
+    .tags_menu{
+        background-color: #383838 !important;
+        color:#383838 !important;
+    }
+    h3{
+        @include h3;
+    }
+    h1{
+        font-family: $open-sans-bold;
+        font-weight: bold;
+        font-size: 39px;
+        line-height: 1;
+        text-align: left;
+        color: $music-page-white;
+    }
+    h6{
+        font-family: $open-sans-regular;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 1;
+        text-align: left;
+        color: $music-page-white;
+        margin-bottom: (29px/$divider);
+    }
+    .col-md-4{
+        @include mq($xls){
+            padding: 0px;
+            margin-bottom: 20px;
+        }
+    }
+    .all-form-inputs{
+        @include mq($xls){
+            margin-bottom: 0px;
+        }
+    }
+    #form-input{
+        .input-group-form{
+            min-height: calc(15vh + 20px);
+            textarea{
+                @include mq($xls){
+                    min-height: 15vh;
+                }
+            }
+        } 
+    } 
+    .top-header{
+        width: 100%;
+        padding-right:15px;
+        .add-music {
+            border-radius: 9px;
+            background: $red;
+            padding-left:21px;
+            padding-right:21px;
+            height: (60px/$divider);
+            display: grid;
+            place-items: center;
+            font-family: $open-sans-regular;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 1;
+            text-align: left;
+            color: $white;
+            cursor: pointer;
+
+            &:hover {
+                background-color: lighten($color: $red, $amount: 6);
+            }
+            &:focus {
+                box-shadow: 0 0 0 0.2rem rgba($color: $red, $alpha: .2);
+            }
+
+            @include mq($xls){
+                display:none;
+            }
+        }
+    }
+    .add-music-mobile{
+         border-radius: 9px;
+         background: $red;
+         padding-left:21px;
+         padding-right:21px;
+         height: (60px/$divider);
+         display: grid;
+         place-items: center;
+         font-family: $open-sans-regular;
+         font-weight: normal;
+         font-size: 16px;
+         line-height: 1;
+         text-align: left;
+         color: $white;
+         cursor: pointer;
+
+         &:hover {
+             background-color: lighten($color: $red, $amount: 6);
+         }
+
+         &:focus {
+             box-shadow: 0 0 0 0.2rem rgba($color: $red, $alpha: .2);
+         }
+         min-width: 100%;
+         margin-bottom: 100px;
+         display: none;
+         @include mq($xls){
+             display: grid;
+             place-items: center;
+         }
+    }
+    #form-input{
+        margin-bottom: 20px;
+    }
+}

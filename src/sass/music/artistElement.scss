@@ -1,0 +1,79 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+.music-e-card{
+    background-color:#181818!important;
+    padding: 16px;
+    transition: background-color .3s ease;
+    
+}
+
+.music-e-card:hover{
+    background-color: #282828 !important;
+    
+    .music-play-btn{
+    opacity: 1;
+    pointer-events: auto;
+    position: absolute;
+    transform: translateY(1);
+    
+    }
+    .music-play-btn-artist{
+        opacity: 1;
+        pointer-events: auto;
+        position: absolute;
+        transform: translateY(1);
+        
+        }
+        .card-share-btn{
+            opacity: 1;
+        }
+    
+}
+a:hover{
+    color: #fff;
+}
+
+
+
+.card-share-btn{
+    position:absolute;
+    opacity: 0;
+    bottom:4vh;
+    right:15px;
+    z-index: 10;
+}
+.card {
+    background-color: rgba($color: #000000, $alpha: 0);
+    margin-left: 7px !important;
+    margin-right: 7px !important;
+    border: 0px solid rgba(0, 0, 0, 0.125) !important;
+  }
+  .music-play-btn-artist{
+    right:8px;
+    opacity: 0;
+    bottom: 12px;   
+
+    transition: all .3s ease;
+    position: absolute;
+    z-index:2;
+    
+}
+@include mq($xls){
+    .music-play-btn-artist{
+        bottom: 4px; 
+        
+    }
+}
+
+@include mq($md){
+    .music-play-btn-artist{
+        bottom: 4px; 
+        
+    }
+}
+@include mq($lg){
+    .music-play-btn-artist{
+        bottom: 4px; 
+        
+    }
+}

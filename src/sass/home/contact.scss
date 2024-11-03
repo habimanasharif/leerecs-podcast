@@ -1,0 +1,246 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+#contact-page-home {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 4em;
+  
+    // border: 2px solid red;
+    @include mq($xxlg) {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+  
+    @include mq($xlg) {
+      padding: 30px;
+    }
+  
+    @include mq($lg) {
+      padding: 15px;
+    }
+  
+    .header {
+      width: 100%;
+      height: 100%;
+  
+      @include mq($md) {
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  
+    //title box
+    .text-items {
+      max-width: 30%;
+      @include mq($md){
+        max-width: 45%;
+      }
+      @include mq($xls){
+        max-width: 100%;
+      }
+    }
+  
+    .main-title {
+      font-size: 4em;
+      margin-bottom: 0.5em;
+      font-family: $GTSectraDisplay_Bold;
+      font-weight: bold;
+      line-height: 1.1;
+      text-align: left;
+      color: $white;
+      margin-bottom: 0px;
+      @include mq($md) {
+        font-size: 3em;
+      }
+    }
+  
+    .txt-section {
+      // border: 2px solid yellow;
+      width: 100%;
+    }
+  
+    .description-text {
+      font-family: $Heebo_Light;
+      font-size: 1.2em;
+      // line-height: 1.3em;
+      text-align: left;
+      color: $white !important;
+      width: 100%;
+      margin-bottom: 20px;
+  
+      @include mq($md) {
+        width: fit-content;
+        height: auto;
+        font-size: 1.1em;
+        line-height: 1.3;
+      }
+    }
+  
+    .owl-img-wrapper {
+      max-width: 100%;
+      width: 100%;
+      height: 40vh;
+      border-radius: 11px;
+      background: url($root+"/assets/images/Band2.jpeg");
+      @include background-img;
+  
+      @include mq($md) {
+        width: 100%;
+      }
+    }
+  
+    .contact-form {
+      padding: 15px;
+  
+      @include mq($xls) {
+        padding: 0px;
+      }
+  
+      max-width: 50%;
+      min-width: 50%;
+      @include mq($xls) {
+        padding-top: 30px;
+      }
+      @include mq($xls) {
+        max-width: 100%;
+      }
+  
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 200px;
+        @include mq($xls){
+          margin-top: 0px;
+        }
+  
+        // justify-content: center;
+        input,
+        textarea {
+          min-width: 100%;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid #fff;
+          padding: 15px;
+          resize: none;
+          color: white;
+          font-family: $Heebo_Light;
+          font-weight: normal;
+          font-size: 24px;
+          outline: none;
+  
+          @include mq($md) {
+            margin-left: unset;
+            padding: 7.5px;
+            width: 100%;
+          }
+  
+          &::placeholder {
+            font-family: $Heebo_Light;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 37.5px;
+            text-align: left;
+            color: #fff;
+            opacity: 0.7;
+  
+            @include mq($md) {
+              font-size: 1em;
+              line-height: 18.75px;
+            }
+          }
+        }
+  
+        .send-button {
+          cursor: pointer;
+          width: 100%;
+          height: 60px;
+          border-radius: 6px;
+          background: transparent;
+          border: 1px solid #fff;
+          margin-top: 31px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 24px;
+  
+          .send-txt {
+            font-family: $open-sans-regular;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 57px;
+            text-align: left;
+            color: #fff;
+  
+            @include mq($md) {
+              font-size: 1em;
+              line-height: 28.5px;
+            }
+          }
+  
+          .send-icon {
+            width: 20px;
+            height: 20px;
+            background: url("../../../public/icons/send-icon.png");
+          }
+  
+          @include mq($md) {
+            width: 100%;
+            margin-top: 30px;
+            column-gap: 12px;
+          }
+        }
+      }
+  
+      @include mq($md) {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  
+  }
+  .contact-banner {
+    text-align: right;
+    font-family: $Heebo_Medium;
+    font-size: 12em;
+    max-height: 200px;
+    line-height: 0.9;
+    color: black;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.16);
+    background: transparent;
+    // width: 714.76px;
+    height: 201.29px;
+    position: absolute;
+    @include mq($xxlg) {
+      right: 10vw;
+    }
+  
+    @include mq($xlg) {
+      right: 30px;
+    }
+  
+    @include mq($lg) {
+      right: 15px;
+    }
+  
+    @include mq($lg) {
+      font-size: 10em;
+      height: 150.29px;
+      max-height: 150.29px;
+    }
+    @include mq($md) {
+      display: none;
+    }
+  }
+
+
+ 

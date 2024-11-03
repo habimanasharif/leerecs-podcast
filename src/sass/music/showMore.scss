@@ -1,0 +1,64 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+#show-more {
+    margin-bottom: 10px;
+    a{
+        text-decoration: none;
+        color:$red;
+    }
+    .show-more {
+        .more {
+            font-family: $open-sans-semi-bold;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1;
+            text-align: left;
+            color: #bfbfbf;
+            text-transform: uppercase;
+            align-self: center;
+            @include transition;
+            @include mq($xls){
+                display: none;
+            }
+
+            &:hover {
+                color: $red;
+                opacity: 1;
+                color: $red;
+            }
+        }
+
+        .show-more-icon {
+            align-self: center;
+            margin-left: 15px;
+            padding-right: 7.5px;
+            @include mq($xls){
+                margin-bottom:15px;
+            }
+            svg {
+
+                circle,
+                path {
+                    @include transition;
+                }
+            }
+        }
+
+        &:hover {
+            svg {
+                circle {
+                    stroke: $red;
+                }
+
+                path {
+                    fill: $red;
+                }
+            }
+
+            .more {
+                color: $red;
+                opacity: 1;
+            }
+        }
+    }
+}
