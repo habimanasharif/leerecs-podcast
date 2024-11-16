@@ -99,11 +99,11 @@ const MusicPlayer = () => {
                   {...options}
                   renderAudioTitle={(audioInfo) => (
                     <div>
-                      <Link title={audioInfo.name} className='singer-link' href={`/a/${audioInfo.singer.replaceAll(" ","-").toLowerCase()}/s/${audioInfo.name.toLowerCase().replaceAll(regex,'').replaceAll(" ","-")}`}>
+                      <Link title={audioInfo.name} className='singer-link' href={`/${audioInfo.name.toLowerCase().replaceAll(regex,'').replaceAll(" ","-")}`}>
                         {audioInfo.name}
                       </Link>
                       {" - "}
-                      <Link title={audioInfo.singer} className='singer-link' href={`/a/${audioInfo.singer.replaceAll(" ","-").toLowerCase()}`}>
+                      <Link title={audioInfo.singer} className='singer-link' href="/">
                         {audioInfo.singer}
                       </Link>
                     </div>

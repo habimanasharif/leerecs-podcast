@@ -8,7 +8,9 @@ const configuration = {
     BACK_END_HOST: "https://leerecs.com/backend/public/api",
     FILE_STORAGE_LINK: "https://res.cloudinary.com/dxkrgura6/image/upload/leerecs/",
     GRAPHQL_SERVER_LINK: "https://leerecs.com/backend/public/graphql",
-    host:"https://leerecs.com"
+    host:"https://leerecs.com",
+    musicHost:"https://play.leerecs.com",
+    podHost:"https://podcast.leerecs.com"
     
 
 }

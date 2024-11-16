@@ -57,7 +57,7 @@ const SelectedPodcastCard:React.FC<props> = ({
                 style={{ color: "white", background: data.darkVibrant,cursor: "pointer" }}
                 onClick={()=>{
                   dispatch(setShareData({
-                      shareUrl:`${configuration.host}/podcast/${artistTitle}`,
+                      shareUrl:`${configuration.podHost}/${artistTitle}`,
                       title:artistTitle
                   }))
               }}

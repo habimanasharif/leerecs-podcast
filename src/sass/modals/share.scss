@@ -56,4 +56,16 @@
     background-color: #212121;
      box-shadow: 0 0.5rem 1rem #212121 !important;
  }
+ input::-webkit-input-placeholder {
+    color: #fff;
+  }
+  input::-moz-placeholder {
+    color: #fff;
+  }
+  input:-ms-input-placeholder {
+    color: #fff;
+  }
+  input:-moz-placeholder {
+    color: #fff;
+  }
 }
