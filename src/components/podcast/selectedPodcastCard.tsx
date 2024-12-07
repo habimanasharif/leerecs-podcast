@@ -7,6 +7,7 @@ import { usePlayer } from '@/lib/usePlayer'
 import { useAppDispatch } from '@/redux/hook'
 import { setShareData } from '@/redux/data/uiData'
 import configuration from '@/config'
+import UserIcon from '../../../public/icons/userIcon'
 
 interface props{
     artistImage:string
@@ -25,6 +26,8 @@ const SelectedPodcastCard:React.FC<props> = ({
 }:props) => {
   const [{playPodcast}]=usePlayer()
   const dispatch=useAppDispatch()
+  const podcastDetail= artistTitle.split("with");
+  const artist =podcastDetail[1] ? podcastDetail[1].split(" (")[0]: null;
     return (
         <div id="playlist_info" style={{ paddingLeft: "15px" }}>
         <div className="row ">
@@ -46,7 +49,7 @@ const SelectedPodcastCard:React.FC<props> = ({
             <div className="d-flex  btn-collection">
               <div
                 className="btn-custom d-flex"
-                style={{ color: "white", background: "#F8107D" }}>
+                style={{ color: "white", background: "#F8107D" ,cursor: "pointer"}}>
                 <div className="icon" onClick={()=>{playPodcast(artistTitle)}}>
                  <PlayIcon/>
                 </div>
@@ -69,6 +72,19 @@ const SelectedPodcastCard:React.FC<props> = ({
                 
                 >Share</div>
               </div>
+              <a href={`http://play.leerecs.com/a/${artist?.replaceAll(" ","-").toLocaleLowerCase()}`} target="_blank" rel="noopener noreferrer">
+              <div
+                className="btn-custom d-flex mx-2"
+                style={{ color: "white", background:"rgba(16,248,212,.9)",cursor: "pointer" }}
+              >
+                <div className="icon ">
+                  <UserIcon size={24}/>
+                </div>
+                <div className="btn-title mx-2 mt-1"
+                
+                > View Profile</div>
+              </div>
+              </a>
             </div>
           </div>
         </div>

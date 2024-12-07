@@ -1,4 +1,5 @@
 'use client'
+import Ads from '@/components/podcast/ads';
 import SelectedPodcastCard from '@/components/podcast/selectedPodcastCard';
 import Suggestions from '@/components/podcast/suggestions';
 import React, { useEffect, useState } from 'react';
@@ -24,7 +25,6 @@ const Page:React.FC<any> = ({ params }: { params: { title: string } }) => {
     const [feedData, setFeedData] = useState<feed[]>([]);
     const [selected,setSelected] = useState<feed>()
     const [description,setDescription] =useState("")
-    console.log(params.title)
       useEffect(() =>{
         
         const filterTitle = (title?:string) => {
@@ -101,6 +101,9 @@ const Page:React.FC<any> = ({ params }: { params: { title: string } }) => {
             )}
             
 
+          </div>
+          <div className="col-lg-5">
+            <Ads adwidth={500} adheight={270}/>
           </div>
 
           <div

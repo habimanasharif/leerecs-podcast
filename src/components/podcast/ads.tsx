@@ -38,7 +38,6 @@ const Ads:React.FC<props>= ({adwidth,adheight}) => {
       
           return () => clearInterval(intervalIdRef.current);
     },[info])
-    console.log(info)
  
     return (
         <div>

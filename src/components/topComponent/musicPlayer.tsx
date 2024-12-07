@@ -9,6 +9,7 @@ import '@/sass/music/musicPlayer.scss'
 import { usePathname } from 'next/navigation';
 import { setMissingTrackBanner, setShowMusicPaywall,setAudioCounter } from '@/redux/data/uiData';
 import Link from 'next/link';
+import configuration from '@/config';
 
  
 const regex = /[?@\/#:\,;%+&=\{\}\[\]\^-]/g
@@ -99,13 +100,13 @@ const MusicPlayer = () => {
                   {...options}
                   renderAudioTitle={(audioInfo) => (
                     <div>
-                      <Link title={audioInfo.name} className='singer-link' href={`/${audioInfo.name.toLowerCase().replaceAll(regex,'').replaceAll(" ","-")}`}>
+                      <Link title={audioInfo.name} className='singer-link' href={`/${audioInfo.name.toLowerCase().replaceAll(" ","-")}`}>
                         {audioInfo.name}
                       </Link>
                       {" - "}
-                      <Link title={audioInfo.singer} className='singer-link' href="/">
+                      <a title={audioInfo.singer} className='singer-link' href={`${configuration.musicHost}/a/${audioInfo.singer.replaceAll(" ","-")}`}>
                         {audioInfo.singer}
-                      </Link>
+                      </a>
                     </div>
                   )}
                   onAudioError={(errMsg,currentPlayId, audioLists, audioInfo)=>{
