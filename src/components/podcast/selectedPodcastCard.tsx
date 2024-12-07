@@ -26,7 +26,7 @@ const SelectedPodcastCard:React.FC<props> = ({
 }:props) => {
   const [{playPodcast}]=usePlayer()
   const dispatch=useAppDispatch()
-  const podcastDetail= artistTitle.split("with");
+  const podcastDetail= artistTitle.split(" with ");
   const artist =podcastDetail[1] ? podcastDetail[1].split(" (")[0]: null;
     return (
         <div id="playlist_info" style={{ paddingLeft: "15px" }}>

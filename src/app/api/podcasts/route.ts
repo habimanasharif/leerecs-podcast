@@ -15,12 +15,12 @@ const fetchRSSFeed = async (url: string): Promise<Feed> => {
     const cachedFeed = cache.get<any>(url);
     if (cachedFeed) {
       return cachedFeed.items.map((item:any)=>{
-        const title = item.title.split("with")
+        const title = item.title.split(" with ")
         const artist =title[1] ? title[1]: "leerecs"
         return {
          imageUrl: item.itunes.image,
          musicUrl: item.enclosure?.url,
-         artist: artist.split("(")[0],
+         artist: artist.split(" (")[0],
          musicName: item.title,
          description: item.contentSnippet,
              }
