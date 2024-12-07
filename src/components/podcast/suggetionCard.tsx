@@ -20,7 +20,7 @@ const SuggetionCard:React.FC<props> = ({imageUrl, musicUrl, artist, musicName}:p
             <div className="player d-flex justify-content-end" onClick={()=>{playPodcast(musicName)}} >
                 <Player />
             </div>
-            <div className="bottom-text-events">
+            <div className="bottom-text-events" style={{cursor:"pointer",}}>
                 <div className="music-title-events">
                     {musicName}
                 </div>
