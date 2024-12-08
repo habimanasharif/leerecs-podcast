@@ -100,7 +100,7 @@ const MusicPlayer = () => {
                   {...options}
                   renderAudioTitle={(audioInfo) => (
                     <div>
-                      <Link title={audioInfo.name} className='singer-link' href={`/${audioInfo.name.toLowerCase().replaceAll(" ","-")}`}>
+                      <Link title={audioInfo.name} className='singer-link' href={`/${audioInfo}`}>
                         {audioInfo.name}
                       </Link>
                       {" - "}

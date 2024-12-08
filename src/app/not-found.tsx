@@ -9,7 +9,7 @@ export default function NotFound() {
         <div className='content'>
          <h1>404</h1>
          <h1>You Hit a Broken String</h1>
-         <h4> <Link href="/music">Go home</Link>  and keep practicing</h4>
+         <h4> <Link href="/">Go home</Link>  and keep practicing</h4>
         <LottieWrapper url="https://assets9.lottiefiles.com/packages/lf20_GmXdtd.json" width="calc(100% -  20px)" height="30vh" />
         </div>
         </div>
