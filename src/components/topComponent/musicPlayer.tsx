@@ -88,7 +88,6 @@ const MusicPlayer = () => {
         };
     
     },[count, userAuth, musicData, dispatch])
-    console.log(count.current)
 
     return (
         <>
@@ -98,17 +97,18 @@ const MusicPlayer = () => {
             <div className="top-index">
                 <ReactJkMusicPlayer
                   {...options}
-                  renderAudioTitle={(audioInfo) => (
+                  renderAudioTitle={(audioInfo) =>{ 
+                    return(
                     <div>
-                      <Link title={audioInfo.name} className='singer-link' href={`/${audioInfo}`}>
+                      <Link title={audioInfo.name} className='singer-link' href={`/${audioInfo.name}`}>
                         {audioInfo.name}
                       </Link>
                       {" - "}
-                      <a title={audioInfo.singer} className='singer-link' href={`${configuration.musicHost}/a/${audioInfo.singer.replaceAll(" ","-")}`}>
+                      <a title={audioInfo.singer} className='singer-link' href={`${configuration.musicHost}/a/${audioInfo.singer.replaceAll(" ","-").toLowerCase()}`}>
                         {audioInfo.singer}
                       </a>
                     </div>
-                  )}
+                  )}}
                   onAudioError={(errMsg,currentPlayId, audioLists, audioInfo)=>{
                     dispatch(setMissingTrackBanner({state:true,page:path}))
 
