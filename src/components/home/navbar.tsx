@@ -13,6 +13,7 @@ const Navbar:React.FC<{navLinks?:any,CTA?:any}> = ({navLinks,CTA}:{navLinks?:any
     const location =usePathname()
     const [navClass, setNavClass] = useState('');
     const [menu, setmenu] = useState<boolean>(false);
+    const [info,setInfo]=useState<any>()
     const{userAuth}=useAppSelector(state=>state.userAuth)
     const manageLocation = () => {
         switch (location) {
@@ -50,31 +51,26 @@ const Navbar:React.FC<{navLinks?:any,CTA?:any}> = ({navLinks,CTA}:{navLinks?:any
           setNavClass('');
         }
       }
-      // add a scroll event listener
-    // window.addEventListener('scroll', () => {
-    //     // call the function with the current scroll position
-    //     changeNavStyle(window.scrollY);
-    //   });
-    
-    // useEffect(() => {
-    //   gsap.registerPlugin(ScrollTrigger);
-    //   var timeline = gsap.timeline();
-    //   ScrollTrigger.create({
-    //     trigger: "#events,#compare",
-    //     animation: timeline,
-    //     start: "top center+=300px",
-    //     end: "top center",
-        
-    //   });
-  
-    //   //nav background
-   
-  
-  
-    // }, [])
+
       const handleHide = () => {
         setmenu(false);
       };
+
+      useEffect(() => {
+        async function getMoviesFromApi() {
+          try {
+            let response = await fetch(
+              "/api/home"
+            );
+            let responseJson = await response.json();
+            setInfo(responseJson.data);
+          } catch (error) {
+            //console.error(error);
+          }
+        }
+        getMoviesFromApi()
+    
+      },[])
     return (
         <div id="menu-main-item" className={`container-fluid fixed-menu ${navClass}`} style={{zIndex:"2000"}}>
       <div className="d-flex justify-content-between mobile-nav">
@@ -86,7 +82,7 @@ const Navbar:React.FC<{navLinks?:any,CTA?:any}> = ({navLinks,CTA}:{navLinks?:any
           <div></div>
           {manageLocation()}
           <div className="cta d-flex">
-            {CTA&&CTA.map((cta:any,index:number)=>(<Link key={index} href={userAuth.isLogedIn?'/music':cta.url}>
+            {info&&info.CTA.map((cta:any,index:number)=>(<Link key={index} href={userAuth.isLogedIn?'/music':cta.url}>
               <div className={index==0?"register":"interview"}>
                {cta.text}
               </div>
