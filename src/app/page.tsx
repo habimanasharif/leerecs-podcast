@@ -109,7 +109,8 @@ const Page:React.FC<any> = () => {
           {selected&& (
             <SelectedPodcastCard 
             artistImage={selected.imageUrl}
-            artistTitle={selected.musicName}
+            artistTitle={selected.artist}
+            musicName={selected.musicName}
             musicUrl={selected.musicUrl}
             artistBio={description}
             data={data}

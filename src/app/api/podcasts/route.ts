@@ -16,7 +16,9 @@ const fetchRSSFeed = async (url: string): Promise<Feed> => {
     if (cachedFeed) {
       return cachedFeed.items.map((item:any)=>{
         const title = item.title.split(" with ")
-        const artist =title[1] ? title[1]: "leerecs"
+        let artist =title[1] ? title[1]: "leerecs"
+        artist=artist.replace(/\b\d{4}-\d{2}-\d{2}\b/, "").trim()
+        artist=artist.replace(/\b\d{2}-\d{2}-\d{4}\b/, "").trim()
         return {
          imageUrl: item.itunes.image,
          musicUrl: item.enclosure?.url,
@@ -31,7 +33,9 @@ const fetchRSSFeed = async (url: string): Promise<Feed> => {
     cache.set(url, feed);
     return feed.items.map((item:any,index:number)=>{
       const title = item.title.split(" with ")
-        const artist =title[1] ? title[1]: "leerecs"
+        let artist =title[1] ? title[1]: "leerecs"
+        artist=artist.replace(/\b\d{4}-\d{2}-\d{2}\b/, "").trim()
+        artist=artist.replace(/\b\d{2}-\d{2}-\d{4}\b/, "").trim()
      return {
       imageUrl: item.itunes.image,
       musicUrl: item.enclosure?.url,

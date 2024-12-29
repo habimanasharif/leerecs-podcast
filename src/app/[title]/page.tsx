@@ -73,7 +73,7 @@ const Page:React.FC<any> = ({ params }: { params: { title: string } }) => {
           fetchContent()   
         
     },[])
-   
+   console.log(selected)
     return (
         <>
         <div
@@ -93,7 +93,8 @@ const Page:React.FC<any> = ({ params }: { params: { title: string } }) => {
             {selected&& (
               <SelectedPodcastCard 
               artistImage={selected.imageUrl}
-              artistTitle={selected.musicName}
+              artistTitle={selected.artist}
+              musicName={selected.musicName}
               musicUrl={selected.musicUrl}
               artistBio={description}
               data={data}

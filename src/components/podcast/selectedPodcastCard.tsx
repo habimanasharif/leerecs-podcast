@@ -14,6 +14,7 @@ interface props{
     artistTitle:string
     artistBio:string
     musicUrl:string
+    musicName:string
     data:any,
 }
 
@@ -21,13 +22,13 @@ interface props{
 const SelectedPodcastCard:React.FC<props> = ({ 
     artistImage,
     artistTitle,
+    musicName,
     artistBio,
     data,
 }:props) => {
   const [{playPodcast}]=usePlayer()
   const dispatch=useAppDispatch()
-  const podcastDetail= artistTitle.split(" with ");
-  const artist =podcastDetail[1] ? podcastDetail[1].split(" (")[0]: null;
+  const artist =artistTitle;
     return (
         <div id="playlist_info" style={{ paddingLeft: "15px" }}>
         <div className="row ">
@@ -41,7 +42,7 @@ const SelectedPodcastCard:React.FC<props> = ({
           </div>
           <div className="col-md-7 music-details ml-auto" style={{marginLeft:"auto"}}>
             <div className="Playlist-title" style={{ color: "white" }}>
-              {artistTitle}
+              {musicName}
             </div>
             <div className="Playlist-Description" style={{ color: "white" }}>
               {artistBio}
@@ -75,10 +76,10 @@ const SelectedPodcastCard:React.FC<props> = ({
               <a href={`http://play.leerecs.com/a/${artist?.replaceAll(" ","-").toLocaleLowerCase()}`} target="_blank" rel="noopener noreferrer">
               <div
                 className="btn-custom d-flex mx-2"
-                style={{ color: "white", background:"rgba(16,248,212,.9)",cursor: "pointer" }}
+                style={{ color: "#077777", background:"rgba(16,248,212,.9)",cursor: "pointer",}}
               >
                 <div className="icon ">
-                  <UserIcon size={24}/>
+                  <UserIcon size={24} stroke='#077777'/>
                 </div>
                 <div className="btn-title mx-2 mt-1"
                 
